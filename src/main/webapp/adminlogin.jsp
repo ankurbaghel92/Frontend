@@ -24,8 +24,7 @@ li{list-style:none}
 	
 
 <body>
-<div class="container">
-<div class="row col-md-4">
+<div class="container row col-md-4">
 <ul class="nav nav-pills nav-stacked">
 <li class="admin-panel"><a href=""><img alt="" src="Images/admin.png" style="width: 100;height: 100"></a></li>
 <li class="active"><a href=""><h4><i class="fa fa-home fa-fw"></i>Home</h4></a></li>
@@ -42,7 +41,7 @@ li{list-style:none}
 </li>
 <li class="listitem"><a href=""><h4><i class="fa fa-pencil fa-fw"></i>Supplier</h4></a>
 <ul>
-<li><a href=""><h4><i class="fa fa-table fa-fw"></i>Insert a new Supplier</h4></a></li>
+<li><a href="InsertSupplierForm"><h4><i class="fa fa-table fa-fw"></i>Insert a new Supplier</h4></a></li>
 <li><a href=""><h4><i class="fa fa-table fa-fw"></i>Delete a Supplier</h4></a></li>
 <li><a href=""><h4><i class="fa fa-table fa-fw"></i>Update a Supplier</h4></a></li>
 <li><a href=""><h4><i class="fa fa-table fa-fw"></i>All Suppliers</h4></a></li>
@@ -51,7 +50,7 @@ li{list-style:none}
 </li>
 <li class="listitem"><a href=""><h4><i class="fa fa-cogs fa-fw"></i>Category</h4></a>
 <ul>
-<li><a href=""><h4><i class="fa fa-table fa-fw"></i>Insert a new Category</h4></a></li>
+<li><a href="InsertCategoryForm"><h4><i class="fa fa-table fa-fw"></i>Insert a new Category</h4></a></li>
 <li><a href=""><h4><i class="fa fa-table fa-fw"></i>Delete a Category</h4></a></li>
 <li><a href=""><h4><i class="fa fa-table fa-fw"></i>Update a Category</h4></a></li>
 <li><a href=""><h4><i class="fa fa-table fa-fw"></i>All Categories</h4></a></li>
@@ -69,7 +68,6 @@ li{list-style:none}
 </div>
 <div class="col-md-8">
 <h4 style="color:lightgreen;font-family:Times new roman">Welcome Admin...!</h4>
-</div>
 </div>
 </body>
 </html>

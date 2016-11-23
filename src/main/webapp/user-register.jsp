@@ -8,11 +8,14 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	
+		<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+	
 
 <body>
 	<div class="container" align="center">
 		<div class="col-md-offset-2">
-			<form method="post" action="" class="well form-horizontal">
+			<form:form method="post" action="userform" class="well form-horizontal" modelAttribute="user">
 				<h2 style="color: green">
 					Please sign up<small style="color: green">...Its Free and
 						Always be... </small>
@@ -24,9 +27,9 @@
 						<div class="form-group">
 							<div class="input-group">
 								<span class="input-group-addon"> <i
-									class="glyphicon glyphicon-user"></i></span> <input type="text"
-									name="fname" id="fname" placeholder="First Name" required
-									class="form-control input-lg" tabindex="1">
+									class="glyphicon glyphicon-user"></i></span> <form:input type="text"
+									name="fname" id="fname" placeholder="First Name" path="fname"
+									class="form-control input-lg" tabindex="1"/>
 							</div>
 						</div>
 					</div>
@@ -34,9 +37,8 @@
 						<div class="form-group">
 							<div class="input-group">
 								<span class="input-group-addon"> <i
-									class="glyphicon glyphicon-user"></i></span> <input type="text"
-									name="lname" id="lname" placeholder="Last Name" required
-									class="form-control input-lg" tabindex="2">
+									class="glyphicon glyphicon-user"></i></span>
+									<form:input type="text" name="lname" placeholder="Last Name" path="lname" class="form-control input-lg" tabindex="2"/>
 							</div>
 						</div>
 					</div>
@@ -47,9 +49,9 @@
 						<div class="form-group">
 							<div class="input-group">
 								<span class="input-group-addon"><i
-									class="glyphicon glyphicon-envelope"></i></span> <input type="text"
+									class="glyphicon glyphicon-envelope"></i></span> <form:input type="text"
 									name="email_id" id="enail-id" class="form-control input-lg"
-									required placeholder="Email Id" tabindex="5">
+									path="email" placeholder="Email Id" tabindex="5"/>
 							</div>
 						</div>
 					</div>
@@ -59,111 +61,39 @@
 							<div class="input-group">
 								<span class="input-group-addon"> <i
 									class="glyphicon glyphicon-earphone"></i>
-								</span> <input type="text" name="mobile_no" id="mobile_no"
-									placeholder="Mobile Number" required
-									class="form-control input-lg" tabindex="4">
+								</span> <form:input type="text" name="mobile_no" id="mobile_no"
+									placeholder="Mobile Number" path="mobile"
+									class="form-control input-lg" tabindex="4"/>
 							</div>
 						</div>
 					</div>
 				</div>
 
-				<div class="row">
-					<div class="col-md-6">
-						<div class="form-group">
-							<div class="input-group">
-								<span class="input-group-addon"> <i
-									class="glyphicon glyphicon-home"></i>
-								</span> <input type="text" name="address1" id="address1"
-									placeholder="Address Line-1" required
-									class="form-control input-lg" tabindex="4">
-							</div>
-						</div>
-					</div>
-
-
-					<div class="col-md-6">
-						<div class="form-group">
-							<div class="input-group">
-								<span class="input-group-addon"> <i
-									class="glyphicon glyphicon-home"></i>
-								</span> <input type="text" name="address2" id="address2"
-									placeholder="Address Line-2" required
-									class="form-control input-lg" tabindex="4">
-							</div>
-						</div>
-					</div>
-				</div>
+							
 				
-				<div class="row">
-				
-				<div class="col-md-4">
-						<div class="form-group">
-							<div class="input-group">
-								<span class="input-group-addon"> <i
-									class="glyphicon glyphicon-home"></i>
-								</span> <input type="text" name="city" id="city"
-									placeholder="City" required
-									class="form-control input-lg" tabindex="4">
-							</div>
-						</div>
-					</div>
-				
-				<div class="col-md-6">
-						<div class="form-group">
-							<div class="input-group">
-								<span class="input-group-addon"> <i
-									class="glyphicon glyphicon-home"></i>
-								</span> <input type="text" name="state" id="state"
-									placeholder="State" required
-									class="form-control input-lg" tabindex="4">
-							</div>
-						</div>
-					</div>
-				
-				<div class="col-md-2">
-						<div class="form-group">
-							<div class="input-group">
-								<span class="input-group-addon"> <i
-									class="glyphicon glyphicon-pushpin"></i>
-								</span> <input type="text" name="pincode" id="pincode"
-									placeholder="PinCode" required
-									class="form-control input-lg" tabindex="4">
-							</div>
-						</div>
-					</div>
-				
-				
-				</div>
 		
 		<div class="row">
 			<div class="col-md-6">
 				<div class="form-group">
-					<input type="password" name="password" id="password"
-						placeholder="Password" required class="form-control input-lg"
-						tabindex="6">
+					<form:input type="password" name="password" id="password"
+						placeholder="Password" path="password" class="form-control input-lg"
+						tabindex="6"/>
 				</div>
 			</div>
 			<div class="col-md-6">
 				<div class="form-group">
-					<input type="password" name="con-password" id="con-password"
-						placeholder="Confirm Password" required
-						class="form-control input-lg" tabindex="2">
+					<form:input type="password" name="con-password" id="con-password" path="ComPassword"
+						placeholder="Confirm Password" 
+						class="form-control input-lg" tabindex="2"/>
 				</div>
 			</div>
 		</div>
 
 		<div class="row">
-			<div class="col-md-3">
-				<span class="button-checkbox">
-					<button type="button" class="btn">I Agree</button> <input
-					type="checkbox" name="t_and_c" id="t_and_c" class="hidden"
-					value="1">
-				</span>
-			</div>
+			
 			<div class="col-md-6">
 				By clicking <strong class="label label-primary">Register</strong>,
-				you agree to the <a href="#" data-toggle="modal"
-					data-target="#t_and_c_m">Terms and Conditions</a>
+				you agree to the Terms and Conditions
 			</div>
 		</div>
 		<h1 style="background-color: #c4e17f; border-radius: 5px; height: 5px"></h1>
@@ -177,8 +107,7 @@
 		
 
 		</div>
-		</form>
-
+</form:form>
 
 	</div>
 	</div>

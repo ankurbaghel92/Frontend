@@ -32,12 +32,48 @@
 		
 	</c:if>
 
+
 	<c:if test="${userclickedlogin}">
 	<br><br><br><br><br><br>
 		<jsp:include page="login.jsp"></jsp:include>
 	<br><br><br><br>
 
 	</c:if>
+	
+	<c:if test="${userclickedInsertCategory}">
+	<br><br><br><br><br><br>
+								<jsp:include page="InsertCategory.jsp"></jsp:include>
+					<br><br><br><br>
+
+	</c:if>
+	
+	
+<c:if test="${not empty InsertCategorySuccess}">
+				<center><h4 style="color: green">${InsertCategorySuccess}</h4></center>
+				<jsp:include page="InsertCategory.jsp"></jsp:include>
+			<br><br><br><br>
+		
+	</c:if>
+		
+
+
+
+
+	
+		<c:if test="${UserClickedInsertSupplier}">
+	<br><br><br><br><br><br>
+									<jsp:include page="InsertSupplier.jsp"></jsp:include>
+	<br><br><br><br>
+	</c:if>
+	
+	<c:if test="${not empty InsertSupplierSuccess}">
+				<center><h4 style="color: green">${InsertSupplierSuccess}</h4></center>
+				<jsp:include page="InsertSupplier.jsp"></jsp:include>
+			<br><br><br><br>
+	</c:if>
+	
+	
+	
 
 <c:if test="${userclickedFZ}">
 	<br><br><br>

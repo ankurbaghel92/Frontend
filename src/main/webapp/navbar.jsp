@@ -22,6 +22,7 @@
 			<li class="active"><a href="home">HOME</a></li>
 			<li><a href="about-us">ABOUT US</a></li>
 			<li><a href="contact-us">CONTACT US</a></li>
+			<li><a href="demo">Demo</a></li>
 
 			
 

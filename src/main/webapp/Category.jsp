@@ -12,6 +12,7 @@
 	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <style>
 *{padding: 0;margin: 0}
@@ -57,41 +58,28 @@ border-bottom:1px dotted gray;
 <div class="nav-header">
 <h3><strong>Bike Category</strong></h3>
 </div>
-<nav class="main-nav">
-<ul class="main-nav-ul">
-
-<li><h4><a><strong>Normal bikes</strong></a></h4>
+<ul class="main-nav-ul main-nav">
+<c:forEach items= "${categorylist}" var="category">
+<li><h4><a><strong>${category.name}</strong></a></h4>
 <ul>
-<li><a href="">YAMAHA SALUTO</a></li>
-<li><a href="">YAMAHA SALUTO RX</a></li>
-<li><a href="">YAMAHA SZ RR</a></li>
-</ul>
-</li>
+<c:forEach items="${category.products}" var="product">
+<li><a href="#">${product.name}</a></li>
 
-<li><h4><a><strong>Sports bikes</strong></a></h4>
-<ul>
-<li><a href="FZ">YAMAHA FZ</a></li>
-<li><a href="">YAMAHA FZ-F1</a></li>
-<li><a href="">YAMAHA R15</a></li>
+
+</c:forEach>
 
 </ul>
 </li>
 
-<li><h4><a><strong>Scooty</strong></a></h4>
-<ul>
-<li><a href="">YAMAHA FASCINO</a></li>
-<li><a href="">YAMAHA RAY Z</a></li>
-<li><a href="">YAMAHA ALPHA</a></li>
 
+</c:forEach>
 </ul>
 
-</li>
 
-<li><h4><a><strong>Search bikes,.</strong></a></h4></li>
+<!-- <li><h4><a><strong>Search bikes,.</strong></a></h4></li>
 <li><h4><a><strong>Upcoming Bikes</strong></a></h4></li>
+ -->
 
-
-</ul>
 
 </nav>
 
