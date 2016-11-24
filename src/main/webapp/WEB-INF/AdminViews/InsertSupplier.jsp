@@ -14,40 +14,40 @@
 <body>
 	<div class="container">
 		<div class="col-md-8">
-			<form action="InsertSupplier" class="well form-horizontal">
-				<div class="row">
+			<form:form action="InsertSupplierform" class="well form-horizontal" modelAttribute="supplier" method="post">
+				<div class="row" >
 					<h2>Insert A New Supplier</h2>
 					<h1 style="background-color: #c4e17f; border-radius: 5px; height: 5px"></h1>
 				</div>
 				<div class="row">
-					<div class="col-md-4">
+					<div class="col-md-6">
 						<label for="name" class="control-label"><h4>Insert Supplier ID</h4></label>
 					</div>
 					<div class="col-md-4">
 						<div class="input-group">
-							<input type=text placeholder="Supplier ID" name="SupId" class="form-control input-lg">
+							<form:input type="text" placeholder="Supplier ID" name="SupId" class="form-control input-lg" path="Id"></form:input>
 						</div>
 					</div>
 				</div>
 
 				<div class="row">
-					<div class="col-md-4">
+					<div class="col-md-6">
 						<label for="name" class="control-label"><h4>Insert Supplier Name</h4></label>
 					</div>
 					<div class="col-md-4">
 						<div class="input-group">
-							<input type=text placeholder="Supplier Name" name="SupName" class="form-control input-lg">
+							<form:input type="text" placeholder="Supplier Name" name="SupName" class="form-control input-lg" path="name"></form:input>
 						</div>
 					</div>
 				</div>
 
 				<div class="row">
-					<div class="col-md-4">
+					<div class="col-md-6">
 						<label for="name" class="control-label"><h4>Insert Supplier Address</h4></label>
 					</div>
 					<div class="col-md-4">
 						<div class="input-group">
-							<input type=text placeholder="Supplier Address" name="SupAdd" class="form-control input-lg">
+							<form:input type="text" placeholder="Supplier Address" name="SupAdd" class="form-control input-lg" path="description"></form:input>
 						</div>
 					</div>
 				</div>
@@ -60,7 +60,7 @@
 						</div>
 					</div>
 				</div>
-			</form>
+			</form:form>
 		</div>
 	</div>
 </body>

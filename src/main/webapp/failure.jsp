@@ -9,7 +9,7 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-<body>
+<body><!-- 
 <div class="container" align="center" > 
 <div style=margin-top:80px;margin-bottom:20px>
 <form action="" name="login-form" style=max-width:420px;padding:30px38px66px;margin:0auto;background-color:#eee;border:3pxdottedrgba(0,0,0,0.1);  >
@@ -20,6 +20,8 @@
 <hr class="colorgraph">
 </form>
 </div>
-</div>
+</div> -->
+
+<h3>Invalid credentials</h3>
 </body>
 </html>

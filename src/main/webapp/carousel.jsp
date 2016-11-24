@@ -12,12 +12,14 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 <body>
- <div class="container col-md-12">
+ 
+ <div class="col-md-8">
+<div class="container col-md-12">
 		<div id="mycarousel" class="carousel slide" data-interval="2000"
 			data-ride="carousel">
 			<div class="carousel-inner">
 				<div class="item active">
-					<img src="Images/carousel1.png" class="image-responsive" style="width:100%;min-height:100px;margin:auto">
+					<img src="Images//Bike1.png" class="image-responsive" style="width:100%;min-height:100px;margin:auto">
 					<div class="carousel-caption">
 						<h2>YAMAHA R15</h2>
 					</div>
@@ -31,18 +33,20 @@
 				<div class="item">
 					<img src="Images/carousel4.png" class="image-responsive" style="width:100%;min-height:100px;margin:auto">
 				</div>
-				<!-- 	<div class="item">
+					<!-- <div class="item">
 					<img src="Images/carousel5.png" class="image-responsive" style="width:100%;min-height:100px;margin:auto">
 				</div>
-				 -->	<div class="item">
+ -->					<div class="item">
 					<img src="Images/carousel6.png" class="image-responsive" style="width:100%;min-height:100px;margin:auto">
 				</div>
 					<div class="item">
 					<img src="Images/carousel7.png" class="image-responsive" style="width:100%;min-height:100px;margin:auto">
 				</div>
+				
+</div>
 
 			</div>
 </div>
-	</div>
+	<br><hr></div>
 </body>
 </html>

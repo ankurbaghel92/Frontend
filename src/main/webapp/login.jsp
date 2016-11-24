@@ -16,8 +16,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<div class="container" align="center">
-		<div class="col-md-offset-2 col-md-8">
+	<div class="container col-md-8">
 			<form:form method="post" action="loginform" class="well form-horizontal" modelAttribute="login">
 				<h2 style="color:green">
 					Login Here<small style="color:green">...You are our Existing Customer</small>
@@ -33,7 +32,7 @@
 								<span class="input-group-addon"><i
 									class="glyphicon glyphicon-user"></i></span> <form:input type="text" 
 									class="form-control input-lg" path="username" name="username"
-									placeholder="User Name" />
+									placeholder="Email ID" />
 							</div>
 						</div>
 					</div></div>
@@ -71,7 +70,6 @@
 </form:form>
 
 		</div>
-	</div>
 
 
 </body>

@@ -13,8 +13,7 @@
 	
 
 <body>
-	<div class="container" align="center">
-		<div class="col-md-offset-2">
+	<div class="container col-md-8" align="center">
 			<form:form method="post" action="userform" class="well form-horizontal" modelAttribute="user">
 				<h2 style="color: green">
 					Please sign up<small style="color: green">...Its Free and
@@ -109,7 +108,6 @@
 		</div>
 </form:form>
 
-	</div>
 	</div>
 </body>
 </html>

@@ -16,8 +16,8 @@
 <body>
 <jsp:include page="navbar.jsp"></jsp:include>
 	<br><hr>	
-	<jsp:include page="Category.jsp"></jsp:include>
-	<%--  <div class="col-md-8">
+ 	<jsp:include page="Category.jsp"></jsp:include>
+ 	<%--  <div class="col-md-8">
 	 <jsp:include page="carousel.jsp"></jsp:include>
 </div>
  --%>

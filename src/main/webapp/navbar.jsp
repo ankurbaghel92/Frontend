@@ -32,13 +32,19 @@
 
 
 		<ul class="nav navbar-nav navbar-right">
-		<c:if test="${not empty successmessage}">
+		<c:if test="${not empty UserLoginSuccessMessage}">
 		<li><a href="user-register"><span
 					class="glyphicon glyphicon-shopping-cart"></span> My Cart</a></li>
 			<li><a href="login"><span
 					class="glyphicon glyphicon-log-out"></span>Logout</a></li>	
 		</c:if>
-		<c:if test="${empty successmessage}">
+		
+			<c:if test="${not empty AdminSuccessMessage}">
+			<li><a href="login"><span
+					class="glyphicon glyphicon-log-out"></span>Logout</a></li>	
+		</c:if>
+		
+		<c:if test="${empty UserLoginSuccessMessage || AdminSuccessMessage}"> 
 			<li><a href="user-register"><span
 					class="glyphicon glyphicon-user"></span> Sign Up</a></li>
 			<li><a href="login"><span

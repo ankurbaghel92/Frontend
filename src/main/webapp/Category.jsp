@@ -28,6 +28,7 @@ border-bottom:1px dotted gray;
 
 .main-nav{
 background-color:lightgray}
+
 .main-nav a:HOVER {background-color: darkgray}
 
 .main-nav-ul li:hover ul{display: block}
