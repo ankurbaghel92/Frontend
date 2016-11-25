@@ -22,23 +22,26 @@ table, th, td {
 th, td {
     padding: 5px;
 }
+
+select{ width:240px;height:40px
+}
 </style>
 <body>
 		<div class="col-md-8">
-			<form:form action="InsertCategoryform" class="well form-horizontal"
-				method="post" modelAttribute="category">
+			<form:form action="InsertProductform" class="well form-horizontal"
+				method="post" modelAttribute="product" enctype="multipart/formdata">
 				<div class="row">
-					<h2>Insert A New Category</h2>
+					<h2>Add A New Product</h2>
 					<h1
 						style="background-color: #c4e17f; border-radius: 5px; height: 5px"></h1>
 				</div>
 				<div class="row">
 					<div class="col-md-6">
-						<label for="name" class="control-label"><h4>Category ID</h4></label>
+						<label for="name" class="control-label"><h4>Product ID</h4></label>
 					</div>
 					<div class="col-md-4">
 						<div class="input-group">
-							<form:input type="text" placeholder="Category ID" name="CatId" path="Id"
+							<form:input type="text" placeholder="Product ID" name="ProdId" path="Id"
 								class="form-control input-lg"></form:input>
 						</div>
 					</div>
@@ -46,30 +49,82 @@ th, td {
 
 				<div class="row">
 					<div class="col-md-6">
-						<label for="name" class="control-label"><h4>Category Names</h4></label>
+						<label for="name" class="control-label"><h4>Product Name</h4></label>
 					</div>
 					<div class="col-md-4">
 						<div class="input-group">
-							<form:input type="text" placeholder="Category Name" name="CatName" path="name"
+							<form:input type="text" placeholder="Product Name" name="ProdName" path="name"
 								class="form-control input-lg"></form:input>
 						</div>
-
 					</div>
+		</div>
 
-
-
-				</div>
-
-<div class="row">
+			<div class="row">
 					 <div class="col-md-6"> 
-						<label for="name" class="control-label"><h4>Category Description</h4></label>
+						<label for="name" class="control-label"><h4>Category Id</h4></label>
 					</div>
 					<div class="col-md-4">
-						<div class="input-group">
-							<form:input type="text" placeholder="Category Description" name="CatDesc" path="description" class="form-control input-lg"></form:input>
+						<div class="ShowDropdown">
+						<form:select path="Category_Id">
+						<c:forEach items="${categorylist}" var="category">
+						<form:option cssClass="width:50" value="${category.id}"></form:option>
+						
+						</c:forEach>
+						
+						</form:select>
 						</div>
 					</div>
 				</div>
+				
+				
+				<div class="row">
+					 <div class="col-md-6"> 
+						<label for="name" class="control-label"><h4>Supplier Id</h4></label>
+					</div>
+					<div class="col-md-4">
+						<div class="input-group">
+						<form:select path="Category_Id">
+						<c:forEach items="${supplierlist}" var="supplier">
+						<form:option value="${supplier.id}"></form:option>
+						</c:forEach>
+						</form:select>
+						</div>
+					</div>
+				</div>
+<div class="row">
+					<div class="col-md-6">
+						<label for="name" class="control-label"><h4>Product Price</h4></label>
+					</div>
+					<div class="col-md-4">
+						<div class="input-group">
+							<form:input type="text" placeholder="Product Name" name="ProdPrice" path="price"
+								class="form-control input-lg"></form:input>
+						</div>
+					</div>
+		</div>
+		
+		<div class="row">
+					<div class="col-md-6">
+						<label for="name" class="control-label"><h4>Stock</h4></label>
+					</div>
+					<div class="col-md-4">
+						<div class="input-group">
+							<form:input type="text" placeholder="Product Name" name="ProdStock" path="stock"
+								class="form-control input-lg"></form:input>
+						</div>
+					</div>
+		</div>
+
+<div class="row">
+					<div class="col-md-6">
+						<label for="name" class="control-label"><h4>Upload Image</h4></label>
+					</div>
+					<div class="col-md-4">
+						<div class="input-group">
+							<form:input type="file" path="Image" name="ProdImage"></form:input>
+						</div>
+					</div>
+		</div>
 
 
 

@@ -106,9 +106,7 @@
 
 	</c:if>
 	
-	
-	
-	
+		
 	
 <!-- If User Clicked on Contact Us -->
 	<c:if test="${userclickedcontact}">
@@ -129,39 +127,105 @@
 		<jsp:include page="about-us.jsp"></jsp:include>
 	</c:if>
 	
+	<!-- CATEGORY FORM ACTIONS -->
 	
-	<!-- If Admin Clicked on InsertCategory Form -->
+	<!-- If Admin Clicked on InsertCategory -->
 	<c:if test="${userclickedInsertCategory}">
-	<br><br><br>
-								<jsp:include page="WEB-INF/AdminViews/InsertCategory.jsp"></jsp:include>
-					<br><br><br><br>
-
-	</c:if>
-	
-	
+		<jsp:include page="WEB-INF/AdminViews/InsertCategory.jsp"></jsp:include>
+	</c:if>	
+			<!-- If Insert Category is SuccessFul -->
 <c:if test="${not empty InsertCategorySuccess}">
 				<center><h4 style="color: green">${InsertCategorySuccess}</h4></center>
-			<%-- 	<jsp:include page="WEB-INF/AdminViews/InsertCategory.jsp"></jsp:include> --%>
+ 		<jsp:include page="WEB-INF/AdminViews/AllCategory.jsp"></jsp:include>
 			<br><br><br><br>
+	</c:if>
+	
+	<!-- If Admin Clicked on ModifyCategory -->
+		<c:if test="${not empty UserCLickedModifyCategory}">
+ 		<jsp:include page="WEB-INF/AdminViews/ModifyCategory.jsp"></jsp:include>
+	<br><br><br><br>
+	</c:if> 
+	
 		
+		<!-- If Modify Category is SuccessFul -->
+		<c:if test="${not empty ModifyCategorySuccess}">
+				<center><h4 style="color: green">${ModifyCategorySuccess}</h4></center>
+				 		<jsp:include page="WEB-INF/AdminViews/AllCategory.jsp"></jsp:include>
+							<br><br><br><br>
 	</c:if>
 		
-
-
-
-
+	<!-- If Delete Category is SuccessFul -->
+		<c:if test="${not empty DeleteCategorySuccess}">
+				<center><h4 style="color: green">${DeleteCategorySuccess}</h4></center>
+				 		<jsp:include page="WEB-INF/AdminViews/AllCategory.jsp"></jsp:include>
+							<br><br><br><br>
+	</c:if>
+		
+	
+		<!-- SUPPLIER FORM ACTIONS -->
+	
+	<!-- If Admin Clicked on InsertSupplier -->
 	
 		<c:if test="${UserClickedInsertSupplier}">
-	<br><br><br><br><br><br>
-									<jsp:include page="WEB-INF/AdminViews/InsertSupplier.jsp"></jsp:include>
+		<jsp:include page="WEB-INF/AdminViews/InsertSupplier.jsp"></jsp:include>
 	<br><br><br><br>
 	</c:if>
 	
+		<!-- If Insert Supplier is SuccessFul -->
 	<c:if test="${not empty InsertSupplierSuccess}">
 				<center><h4 style="color: green">${InsertSupplierSuccess}</h4></center>
-<%-- 				<jsp:include page="WEB-INF/AdminViews/InsertCategory.jsp"></jsp:include>
- --%>			<br><br><br><br>
+				<jsp:include page="WEB-INF/AdminViews/AllSupplier.jsp"></jsp:include>
+			<br><br><br><br>
 	</c:if>
+	
+	<!-- If Admin Clicked on ModifySupplier -->
+		<c:if test="${not empty AdminClickedModifySupplier}">
+ 		<jsp:include page="WEB-INF/AdminViews/ModifySupplier.jsp"></jsp:include>
+	<br><br><br><br>
+	</c:if> 
+	
+	<!-- If Modify Supplier is SuccessFul -->
+
+<c:if test="${not empty ModifySupplierSuccess}">
+				<center><h4 style="color: green">${ModifySupplierSuccess}</h4></center>
+				 		<jsp:include page="WEB-INF/AdminViews/AllSupplier.jsp"></jsp:include>
+							<br><br><br><br>
+	</c:if>
+
+		<!-- If Delete Supplier is SuccessFul -->
+		<c:if test="${not empty DeleteSupplierSuccess}">
+				<center><h4 style="color: green">${DeleteSupplierSuccess}</h4></center>
+				 		<jsp:include page="WEB-INF/AdminViews/AllSupplier.jsp"></jsp:include>
+							<br><br><br><br>
+	</c:if>
+		
+	
+	
+	
+	
+	
+	
+		<c:if test="${userclickedInsertProduct}">
+		<jsp:include page="WEB-INF/AdminViews/InsertProduct.jsp"></jsp:include>
+	</c:if>	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 
 	

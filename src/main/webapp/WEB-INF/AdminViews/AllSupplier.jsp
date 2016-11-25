@@ -25,6 +25,7 @@ th, td {
 
 <body>
 	<div class="container col-md-8">
+	<form:form action="" modelAttribute="supplier">
 		<h3>Supplier List</h3>
 		<h1 style="background-color: #c4e17f; border-radius: 5px; height: 5px"></h1>
 		
@@ -35,14 +36,18 @@ th, td {
 		<th><h4><strong>Supplier Address</strong></h4></th>
 		</tr>
 		 <c:forEach items="${supplierlist}" var="supplier">
+		  	 <c:url var="modifysupplier" value="/ModifySupplier?sid=${supplier.id}"></c:url>
+		  <c:url var="deletesupplier" value="/DeleteSupplier?sid=${supplier.id}"></c:url>
 		<tr style="height: 30px">
 		<td>${supplier.id}</td>
 		<td>${supplier.name}</td>
 		<td>${supplier.description}</td>
+		<td><a href="${modifysupplier}">Modify</a></td>
+		<td><a href="${deletesupplier}">Delete</a></td>
 		</tr>
 		</c:forEach> 		
 		</table>
-
+</form:form>
 	</div>
 </body>
 </html>

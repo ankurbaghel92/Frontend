@@ -14,6 +14,8 @@ import com.niit.yamahaonlinebackend.model.Product;
 
 @Controller
 public class HelloController {
+	
+
 
 	@Autowired
 	Category category;

@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.niit.yamahaonlinebackend.DAO.CategoryDAO;
@@ -38,53 +39,61 @@ public class CategoryController {
 				return "home";
 	}
 	
-/*	@RequestMapping(value="/demo")
-	public ModelAndView demo(HttpSession session){
-		ModelAndView mv = new ModelAndView("/DemoCategory");
-		session.setAttribute("category", category);
-		session.setAttribute("product", product);
-		System.out.println(category.getProducts());
-
-		session.setAttribute("categorylist", categoryDAO.list());
-		return mv;
-		
-	}
-		
-	*/
-	
-	
 	@RequestMapping(value="/InsertCategoryform")
 	public ModelAndView ProcessInsertCategory(@ModelAttribute Category category)
 	{
-		ModelAndView model = new ModelAndView("home");
-		/*String CatId=req.getParameter("CatId");
-		String CatName=req.getParameter("CatName");
-		String CatDesc=req.getParameter("CatDesc");
-		category.setId(CatId);
-		category.setName(CatName);
-		category.setDescription(CatDesc);*/
+		ModelAndView mv = new ModelAndView("home");
 		categoryDAO.save(category);
-		
-		/*System.out.println(CatId);
-		System.out.println(CatName);
-		System.out.println(CatDesc);*/
-		model.addObject("InsertCategorySuccess", "Category has been Successfully Inserted");
-		return model;
+		mv.addObject("category", category);
+		mv.addObject("categorylist", categoryDAO.list());
+		mv.addObject("InsertCategorySuccess", "Category has been Successfully Inserted");
+		return mv;
 	}
-	
 	
 	@RequestMapping(value="/DisplayAllCategory")
 	public ModelAndView DisplayAllCategory(HttpSession session)
 	{
 		ModelAndView mv = new ModelAndView("home");
-		/*session.setAttribute("category", category);
-	session.setAttribute("categorylist", categoryDAO.list());*/
 	mv.addObject("category", category);
 	mv.addObject("categorylist", categoryDAO.list());
-
 		mv.addObject("ShowingAllCategory", "show");
-		
-		
 		return mv;
 	}
+	
+	@RequestMapping(value="/ModifyCategory")
+	public ModelAndView ShowModifyCategory(@RequestParam("cid") String CategoryId){
+		ModelAndView mv = new ModelAndView("home");
+		category =categoryDAO.get(CategoryId);
+		mv.addObject("category", category);
+		mv.addObject("categorylist", categoryDAO.list());
+		mv.addObject("UserCLickedModifyCategory", "true");
+		return mv;
+	}
+	
+	@RequestMapping(value="/ModifyCategoryform")	
+	public ModelAndView ProcessModifyCategory(@ModelAttribute Category category)
+	{
+		ModelAndView mv = new ModelAndView("home");
+		categoryDAO.update(category);
+		mv.addObject("category", category);
+		mv.addObject("cateogorylist", categoryDAO.list());
+		mv.addObject("ModifyCategorySuccess", "Thank you Category has been Modified !!");
+		return mv;
+	}
+	
+	@RequestMapping(value="/DeleteCategory")
+	public ModelAndView ProcessDeleteCategory(@RequestParam("cid") String CategoryId)
+	{
+		ModelAndView mv = new ModelAndView("home");
+		System.out.println(CategoryId);
+		category = categoryDAO.get(CategoryId);
+		categoryDAO.delete(category);
+		mv.addObject("category", category);
+		mv.addObject("categorylist", categoryDAO.list());
+		mv.addObject("DeleteCategorySuccess", "Thank you Category has been Deleted !!");
+		return mv;
+	}
+	
+	
+	
 }
