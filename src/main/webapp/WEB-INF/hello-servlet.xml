@@ -35,7 +35,7 @@ http://www.springframework.org/schema/mvc
 		<mvc:resources mapping="/Images/**" location="/Images/"></mvc:resources>
     <mvc:annotation-driven/>
 	
-	<!-- 
+	
 	
 	<webflow:flow-executor id="flowExecutor"></webflow:flow-executor>
 	
@@ -60,8 +60,8 @@ http://www.springframework.org/schema/mvc
 	
 	<bean class="org.springframework.webflow.mvc.servlet.FlowHandlerMapping">
 		<property name="flowRegistry" ref="flowRegistry"></property>
-		<property name="userOrder" value="0"></property>
-	</bean> -->
+		<property name="order" value="0"></property>
+	</bean>
 	
 	
 	
