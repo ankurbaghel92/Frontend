@@ -35,6 +35,8 @@ public class CategoryController {
 	@RequestMapping(value="/InsertCategory",method=RequestMethod.GET)
 	public String ShowInsertCategory(Model model){
 		model.addAttribute("userclickedInsertCategory","true");
+		model.addAttribute("category", category);
+		model.addAttribute("categorylist", categoryDAO.list());
 		model.addAttribute("category", new Category());
 				return "home";
 	}
@@ -76,7 +78,7 @@ public class CategoryController {
 		ModelAndView mv = new ModelAndView("home");
 		categoryDAO.update(category);
 		mv.addObject("category", category);
-		mv.addObject("cateogorylist", categoryDAO.list());
+		mv.addObject("categorylist", categoryDAO.list());
 		mv.addObject("ModifyCategorySuccess", "Thank you Category has been Modified !!");
 		return mv;
 	}
@@ -85,7 +87,6 @@ public class CategoryController {
 	public ModelAndView ProcessDeleteCategory(@RequestParam("cid") String CategoryId)
 	{
 		ModelAndView mv = new ModelAndView("home");
-		System.out.println(CategoryId);
 		category = categoryDAO.get(CategoryId);
 		categoryDAO.delete(category);
 		mv.addObject("category", category);

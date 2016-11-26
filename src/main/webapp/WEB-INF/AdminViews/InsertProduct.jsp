@@ -28,12 +28,10 @@ select{ width:240px;height:40px
 </style>
 <body>
 		<div class="col-md-8">
-			<form:form action="InsertProductform" class="well form-horizontal"
-				method="post" modelAttribute="product" enctype="multipart/formdata">
+			<form:form action="ProcessInsertProductform" class="well form-horizontal" method="post" modelAttribute="product" enctype="multipart/form-data">
 				<div class="row">
 					<h2>Add A New Product</h2>
-					<h1
-						style="background-color: #c4e17f; border-radius: 5px; height: 5px"></h1>
+					<h1 style="background-color: #c4e17f; border-radius: 5px; height: 5px"></h1>
 				</div>
 				<div class="row">
 					<div class="col-md-6">
@@ -64,8 +62,7 @@ select{ width:240px;height:40px
 						<label for="name" class="control-label"><h4>Category Id</h4></label>
 					</div>
 					<div class="col-md-4">
-						<div class="ShowDropdown">
-						<form:select path="Category_Id">
+											<form:select path="Category_Id">
 						<c:forEach items="${categorylist}" var="category">
 						<form:option cssClass="width:50" value="${category.id}"></form:option>
 						
@@ -74,7 +71,6 @@ select{ width:240px;height:40px
 						</form:select>
 						</div>
 					</div>
-				</div>
 				
 				
 				<div class="row">
@@ -83,7 +79,7 @@ select{ width:240px;height:40px
 					</div>
 					<div class="col-md-4">
 						<div class="input-group">
-						<form:select path="Category_Id">
+						<form:select path="Supplier_Id">
 						<c:forEach items="${supplierlist}" var="supplier">
 						<form:option value="${supplier.id}"></form:option>
 						</c:forEach>
@@ -121,7 +117,7 @@ select{ width:240px;height:40px
 					</div>
 					<div class="col-md-4">
 						<div class="input-group">
-							<form:input type="file" path="Image" name="ProdImage"></form:input>
+							<form:input type="file" path="image" name="image" ></form:input>
 						</div>
 					</div>
 		</div>
@@ -138,29 +134,34 @@ select{ width:240px;height:40px
 				</div>
 </form:form>
 
-	<form:form action="" modelAttribute="category">
+	<form:form action="" modelAttribute="product">
 		<h3>Category List</h3>
 		<h1 style="background-color: #c4e17f; border-radius: 5px; height: 5px"></h1>
 		<table style="width: 100%;border-spacing:25px">
 		<tr style="height: 50px;color: green">
-		<th><h4><strong>Category Id</strong></h4></th>
-		<th><h4><strong>Category Name</strong></h4></th>
-		<th><h4><strong>Category Description</strong></h4></th>
+		<th><h4><strong>Product Id</strong></h4></th>
+		<th><h4><strong>Product Name</strong></h4></th>
+		<th><h4><strong>Product Price</strong></h4></th>
+		<th><h4><strong>Category_ID</strong></h4></th>
+		<th><h4><strong>Supplier_Id</strong></h4></th>
+		<th><h4><strong>Stock</strong></h4></th>
 		</tr>
-		 <c:forEach items="${categorylist}" var="category">
-		 <c:url var="modifycategory" value="/ModifyCategory?cid=${category.id}"></c:url>
-		  <c:url var="deletecategory" value="/DeleteCategory?cid=${category.id}"></c:url>
+		 <c:forEach items="${productlist}" var="product">
+		 <c:url var="modifyproduct" value="/ModifyProduct?pid=${product.id}"></c:url>
+		  <c:url var="deleteproduct" value="/DeleteProduct?pid=${product.id}"></c:url>
  	<tr style="height: 30px">
-		<td>${category.id}</td>
-		<c:set var="cat" value="${category.id}"></c:set>
-		<td>${category.name}</td>
-		<td>${category.description}</td>
-		<td><a href="${modifycategory}">Modify</a></td>
-		<td><a href="${deletecategory}">Delete</a></td>
+		<td>${product.id}</td>
+		<td>${product.name}</td>
+		<td>${product.price}</td>
+		<td>${product.category_Id}</td>
+		<td>${product.supplier_Id}</td>
+		<td>${product.stock}</td>
+		<td><a href="${modifyproduct}">Modify</a></td>
+		<td><a href="${deleteproduct}">Delete</a></td>
 		</tr>
 		</c:forEach> 		
 		</table>
-</form:form>
+		</form:form>
 	</div>
 </body>
 </html>

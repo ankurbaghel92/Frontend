@@ -91,20 +91,10 @@
 	</c:if>
 	
 	
-	<c:if test="${not empty ShowingAllCategory}">
-	<center><h4 style="color: green">${ShowingAllCategory}</h4></center>
- 		<jsp:include page="WEB-INF/AdminViews/AllCategory.jsp"></jsp:include>
-	<br><br><br><br>
-
-	</c:if>
 	
 	
-	<c:if test="${not empty ShowingAllSupplier}">
-	<center><h4 style="color: green">${ShowingAllSupplier}</h4></center>
- 		<jsp:include page="WEB-INF/AdminViews/AllSupplier.jsp"></jsp:include>
-	<br><br><br><br>
-
-	</c:if>
+	
+	
 	
 		
 	
@@ -160,7 +150,31 @@
 				 		<jsp:include page="WEB-INF/AdminViews/AllCategory.jsp"></jsp:include>
 							<br><br><br><br>
 	</c:if>
-		
+	
+	<!-- Displaying All Category -->
+		<c:if test="${not empty ShowingAllCategory}">
+	<center><h4 style="color: green">${ShowingAllCategory}</h4></center>
+ 		<jsp:include page="WEB-INF/AdminViews/AllCategory.jsp"></jsp:include>
+	<br><br><br><br>
+	</c:if>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 		<!-- SUPPLIER FORM ACTIONS -->
 	
@@ -200,27 +214,71 @@
 	</c:if>
 		
 	
+	<!-- Displaying All Supplier -->
+	<c:if test="${not empty ShowingAllSupplier}">
+	<center><h4 style="color: green">${ShowingAllSupplier}</h4></center>
+ 		<jsp:include page="WEB-INF/AdminViews/AllSupplier.jsp"></jsp:include>
+	<br><br><br><br>
+	</c:if>
 	
 	
 	
 	
 	
+	
+	
+	
+	
+	
+	
+	<!-- PRODUCT FORM ACTION  -->
+	
+	
+	<!-- If Admin Clicked on InsertProduct -->
 		<c:if test="${userclickedInsertProduct}">
 		<jsp:include page="WEB-INF/AdminViews/InsertProduct.jsp"></jsp:include>
 	</c:if>	
 	
 	
 	
+		<!-- If Insert Supplier is SuccessFul -->
+	<c:if test="${not empty InsertProductSuccess}">
+				<center><h4 style="color: green">${InsertProductSuccess}</h4></center>
+				<jsp:include page="WEB-INF/AdminViews/AllProduct.jsp"></jsp:include>
+			<br><br><br><br>
+	</c:if>
 	
 	
+	<!-- Displaying All Product -->
+	<c:if test="${not empty ShowAllProduct}">
+	<center><h4 style="color: green">${ShowAllProduct}</h4></center>
+ 		<jsp:include page="WEB-INF/AdminViews/AllProduct.jsp"></jsp:include>
+	<br><br><br><br>
+	</c:if>
 	
 	
+	<!-- If Admin Clicked on ModifyProduct -->
+		<c:if test="${not empty AdminClickedModifyProduct}">
+ 		<jsp:include page="WEB-INF/AdminViews/ModifyProduct.jsp"></jsp:include>
+	<br><br><br><br>
+	</c:if> 
 	
 	
+	<!-- If Modify Product is SuccessFul -->
+
+<c:if test="${not empty ModifyProductSuccess}">
+				<center><h4 style="color: green">${ModifyProductSuccess}</h4></center>
+				 		<jsp:include page="WEB-INF/AdminViews/AllProduct.jsp"></jsp:include>
+							<br><br><br><br>
+	</c:if>
 	
 	
-	
-	
+	<!-- If Delete Product is SuccessFul -->
+		<c:if test="${not empty DeleteProductSuccess}">
+				<center><h4 style="color: green">${DeleteProductSuccess}</h4></center>
+				 		<jsp:include page="WEB-INF/AdminViews/AllProduct.jsp"></jsp:include>
+							<br><br><br><br>
+	</c:if>
 	
 	
 	

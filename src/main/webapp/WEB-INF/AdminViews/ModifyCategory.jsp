@@ -99,13 +99,13 @@ th, td {
 		</tr>
 		 <c:forEach items="${categorylist}" var="category">
 		 <c:url var="modifycategory" value="/ModifyCategory?cid=${category.id}"></c:url>
- 	<tr style="height: 30px">
+		 <c:url var="deletecategory" value="/DeleteCategory?cid=${category.id}"></c:url>
+		  	<tr style="height: 30px">
 		<td>${category.id}</td>
-		<c:set var="cat" value="${category.id}"></c:set>
 		<td>${category.name}</td>
 		<td>${category.description}</td>
 		<td><a href="${modifycategory}">Modify</a></td>
-		<td><a href="#">Delete</a></td>
+		<td><a href="${deletecategory}">Delete</a></td>
 		</tr>
 		</c:forEach> 		
 		</table>
