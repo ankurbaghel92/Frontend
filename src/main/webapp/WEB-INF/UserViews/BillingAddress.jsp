@@ -27,7 +27,7 @@ label{margin-bottom: 20px}
 
 <form action="" class="well form-veritical" >
 <div class="row">
-<center><h3><strong></strong>Add Shipping Address</h3></center> 
+<center><h3><strong></strong>Add Billing Address</h3></center> 
 <h1 style="background-color: #c4e17f; border-radius: 5px; height: 5px"></h1>
 </div>
 <div class="row">

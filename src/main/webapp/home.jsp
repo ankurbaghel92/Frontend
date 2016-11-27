@@ -282,9 +282,44 @@
 	
 	
 	
+	<c:if test="${ShowCODPage}">
+	<br><br><br>
+	<jsp:include page="WEB-INF/UserViews/PaymentMethod.jsp"></jsp:include><br><br><br><br>
+	<br><br><br><br>
+		<jsp:include page="WEB-INF/UserViews/cod.jsp"></jsp:include>
+	<br><br><br><br>
+
+	</c:if>
+	
+	<c:if test="${ShowDCPage}">
+	<br><br><br>
+	<jsp:include page="WEB-INF/UserViews/PaymentMethod.jsp"></jsp:include><br><br><br><br>
+		<jsp:include page="WEB-INF/UserViews/credit_debit.jsp"></jsp:include>
+	<br><br><br><br>
+
+	</c:if>
+	
+	<c:if test="${ShowpaypalPage}">
+	<br><br><br>
+	<jsp:include page="WEB-INF/UserViews/PaymentMethod.jsp"></jsp:include><br><br><br><br>
+		<jsp:include page="WEB-INF/UserViews/paypal.jsp"></jsp:include>
+	<br><br><br><br>
+
+	</c:if>
 	
 	
 	
+	
+	
+	
+	
+	
+	<c:if test="${userclickedDemo}">
+	<br><br><br>
+		<jsp:include page="WEB-INF/UserViews/PaymentMethod.jsp"></jsp:include>
+	<br><br><br><br>
+
+	</c:if>
 
 	
 

@@ -54,5 +54,28 @@ public class UserController {
 			return mv;
 		}
 	}
+	
+	@RequestMapping(value = "/cod") 
+	public String Cod(Model model) { 
+ 
+		model.addAttribute("ShowCODPage","true");
+	    return "home"; 
+	}
+	
+	@RequestMapping(value = "/credit_debit") 
+	public String creditdebit(Model model) { 
+ 
+		model.addAttribute("ShowDCPage","true");
+	    return "home"; 
+	}
+	
+	@RequestMapping(value = "/paypal") 
+	public String paypal(Model model) { 
+ 
+		model.addAttribute("ShowpaypalPage","true");
+	    return "home"; 
+	}
+	
+	
 }
 
