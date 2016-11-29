@@ -8,9 +8,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.niit.yamahaonlinebackend.DAO.CategoryDAO;
+import com.niit.yamahaonlinebackend.DAO.ProductDAO;
 import com.niit.yamahaonlinebackend.model.Category;
 import com.niit.yamahaonlinebackend.model.Product;
 
@@ -30,6 +32,15 @@ public class HelloController {
 	@Autowired
 	Product product;
 
+	@Autowired
+	ProductDAO productDAO;
+
+
+	
+	
+	
+	
+
 	@RequestMapping(value = "/contact-us")
 	public String contactus(Model model) {
 		model.addAttribute("userclickedcontact", "true");
@@ -40,8 +51,8 @@ public class HelloController {
 	 * model){ model.addAttribute("userclickedRegister","true"); return "home";
 	 * }
 	 */
-
-	@RequestMapping("/")
+	
+	@RequestMapping({"/","/home"})
 	public ModelAndView index(HttpSession session) {
 		log.debug("Starting of the Method Index");
 		ModelAndView mv = new ModelAndView("/home");

@@ -13,6 +13,8 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 
 <style>
 *{padding: 0;margin: 0}
@@ -59,12 +61,15 @@ border-bottom:1px dotted gray;
 <div class="nav-header">
 <h3><strong>Bike Category</strong></h3>
 </div>
+<form action=""method="get">
 <ul class="main-nav-ul main-nav">
 <c:forEach items= "${categorylist}" var="category">
 <li><h4><a><strong>${category.name}</strong></a></h4>
 <ul>
 <c:forEach items="${category.products}" var="product">
-<li><a href="#">${product.name}</a></li>
+<c:url var="userselectedproduct" value="/UserSelectedProduct?pid=${product.id}"></c:url>
+
+<li><a href="${userselectedproduct}" >${product.name}</a></li>
 
 
 </c:forEach>
@@ -82,8 +87,7 @@ border-bottom:1px dotted gray;
  -->
 
 
-</nav>
-
+</form>
 
 </div>
 </body>

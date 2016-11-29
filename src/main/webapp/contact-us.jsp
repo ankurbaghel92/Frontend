@@ -11,8 +11,8 @@
 
 <body>
 
-	<div class="container" align="center">
-		<div class="col-md-offset-2">
+	<div class="container col-md-8">
+
 			<form method="post" action="" class="well form-horizontal">
 				<h2 style="color: green">
 					Contact-Us<small style="color: green">...Please Feel Free
@@ -93,7 +93,7 @@
 			</form>
 
 
-		</div>
+		
 	</div>
 
 

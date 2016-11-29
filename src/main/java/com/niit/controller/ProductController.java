@@ -1,20 +1,25 @@
 package com.niit.controller;
+import java.io.IOException;
+
+import org.springframework.aop.ThrowsAdvice;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.niit.util.FileUtil;
 import com.niit.yamahaonlinebackend.DAO.CategoryDAO;
 import com.niit.yamahaonlinebackend.DAO.ProductDAO;
 import com.niit.yamahaonlinebackend.DAO.SupplierDAO;
 import com.niit.yamahaonlinebackend.model.Category;
 import com.niit.yamahaonlinebackend.model.Product;
 import com.niit.yamahaonlinebackend.model.Supplier;
-import com.niit.yamahaonlinebackend.util.FileUtil;
+
 
 @Controller
 public class ProductController {
@@ -36,6 +41,35 @@ public class ProductController {
 	
 	@Autowired
 	ProductDAO productDAO;
+	
+	
+	
+	@RequestMapping("/UserSelectedProduct")
+	public ModelAndView SelectedProduct(@RequestParam("pid")String ProductId)
+		{
+			System.out.println("Executing Selected Product Method");
+			ModelAndView mv = new ModelAndView("home");
+			product=productDAO.get(ProductId);
+			mv.addObject("ProductId", ProductId);
+			mv.addObject("product", product);
+			mv.addObject("productlist", productDAO.list());
+		    System.out.println(product.getName());	
+		    mv.addObject("ShowSelectedProduct", "true");
+				return mv;
+		}
+	
+
+/*	
+	@RequestMapping("UserSelectedProduct/{product.id}")
+	public String SelectedProduct(@PathVariable String productid)throws IOException
+	{
+		return "FZ";
+	}
+	
+	*/
+	
+	
+	
 	
 	
 	@RequestMapping(value="/InsertProduct",method=RequestMethod.GET)
@@ -61,6 +95,9 @@ public class ProductController {
 		file=product.getImage();
 		
 		FileUtil.Upload("D:\\DT NIIT\\yamahaonline\\ProductImages", file, product.getId()+".jpg");
+		
+/*		FileUtil.Upload("/Images", file, product.getId()+".jpg");
+*/
 		productDAO.save(product);
 		mv.addObject("product", product);
 		mv.addObject("productlist", productDAO.list());
@@ -130,6 +167,10 @@ public class ProductController {
 		
 		return mv;
 	}
+	
+	
+	
+	
 	
 	
 	

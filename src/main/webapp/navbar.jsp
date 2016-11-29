@@ -44,7 +44,7 @@
 					class="glyphicon glyphicon-log-out"></span>Logout</a></li>	
 		</c:if>
 		
-		<c:if test="${empty UserLoginSuccessMessage || AdminSuccessMessage}"> 
+		<c:if test="${empty UserLoginSuccessMessage && empty AdminSuccessMessage}"> 
 			<li><a href="user-register"><span
 					class="glyphicon glyphicon-user"></span> Sign Up</a></li>
 			<li><a href="login"><span

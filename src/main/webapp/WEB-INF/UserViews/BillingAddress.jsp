@@ -76,7 +76,7 @@ label{margin-bottom: 20px}
 </div>
 <div class="row">
 <div class="col-md-3 col-md-offset-4">
-<input type="submit" name="eventId_submitShippingAddress" class="btn btn-success btn-lg" value="Save">
+<input type="submit" name="eventId_submitBillingAddress" class="btn btn-success btn-lg" value="Save">
 </div>
 <div class="col-md-3">
 <input type="submit" name="eventId_cancel" class="btn btn-danger btn-lg" value="Cancel">

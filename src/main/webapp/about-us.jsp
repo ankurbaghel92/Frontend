@@ -11,13 +11,13 @@
 
 <body>
 <body>
-<div class="container col-md-12" align="center" style="background-color:grey">
+<div class="container col-md-8" align="center" style="background-color:grey">
  <h3 class=first><span>YAMAHA MOTORS PVT LTD</span></h3>
   <h1 style="background-color:#c4e17f;border-radius:5px;height: 5px "></h1>
 
 </div>
 <br>
-<div class="container col-md-offset-1"> 
+<div class="container col-md-8"> 
 <hr> 
 <p><strong>The Yamaha Motor Group Companies in India include:</strong></p>
 <p>Yamaha Motor made its initial foray into India in 1985 as a joint-venture. In August 2001, it became a 100% subsidiary of Yamaha Motor
@@ -32,7 +32,7 @@ scooters in domestic as well as export markets.</p>
 <h1 style="background-color:#c4e17f;border-radius:5px;height: 5px "></h1>
 
 <br>
-<div class="container col-md-offset-8" style="background-color:grey">
+<div class="container col-md-8" style="background-color:grey">
 <h3>YAMAHA MOTORS PVT LTD</h3>
 <h5>7/7 Yamaha motors</h5>
 <h5>Pune-Mumbai Highway</h5>

@@ -90,7 +90,11 @@
 
 	</c:if>
 	
-	
+	<c:if test="${ShowSelectedProduct}">
+	<br><br><br>
+		<jsp:include page="WEB-INF/UserViews/SelectedProduct.jsp"></jsp:include>
+		<br><br>
+	</c:if>
 	
 	
 	
@@ -100,7 +104,7 @@
 	
 <!-- If User Clicked on Contact Us -->
 	<c:if test="${userclickedcontact}">
-	<br>
+	<br><br><br>
 		<jsp:include page="contact-us.jsp"></jsp:include>
 		<br><br>
 	</c:if>
@@ -113,7 +117,7 @@
 
 <!-- If User Clicked on About Us -->
 		<c:if test="${userclickedAbout}">
-	<br><br><br><br><br><br>
+	<br><br><br>
 		<jsp:include page="about-us.jsp"></jsp:include>
 	</c:if>
 	
