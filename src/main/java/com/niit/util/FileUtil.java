@@ -21,6 +21,7 @@ public class FileUtil {
 					dir.mkdirs();
 				}
 				File ServerFile = new File(dir.getAbsolutePath()+File.separator +filename);
+
 				BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(ServerFile));
 			stream.write(bytes);
 			stream.close();

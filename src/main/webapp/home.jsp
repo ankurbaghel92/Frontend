@@ -33,8 +33,8 @@
 			
 			<h4 style="color: green">${UserLoginSuccessMessage} ${Username}</h4>
 		</center>
-				<jsp:include page="carousel.jsp"></jsp:include>
-		
+<%-- 				<jsp:include page="carousel.jsp"></jsp:include>
+ --%>		
 			<br><br><br><br>
 		
 	</c:if>
@@ -92,7 +92,7 @@
 	
 	<c:if test="${ShowSelectedProduct}">
 	<br><br><br>
-		<jsp:include page="WEB-INF/UserViews/SelectedProduct.jsp"></jsp:include>
+		<jsp:include page="WEB-INF/userviews/SelectedProduct.jsp"></jsp:include>
 		<br><br>
 	</c:if>
 	
@@ -288,29 +288,54 @@
 	
 	<c:if test="${ShowCODPage}">
 	<br><br><br>
-	<jsp:include page="WEB-INF/UserViews/PaymentMethod.jsp"></jsp:include><br><br><br><br>
+	<jsp:include page="WEB-INF/userviews/PaymentMethod.jsp"></jsp:include><br><br><br><br>
 	<br><br><br><br>
-		<jsp:include page="WEB-INF/UserViews/cod.jsp"></jsp:include>
+		<jsp:include page="WEB-INF/userviews/cod.jsp"></jsp:include>
 	<br><br><br><br>
 
 	</c:if>
 	
 	<c:if test="${ShowDCPage}">
 	<br><br><br>
-	<jsp:include page="WEB-INF/UserViews/PaymentMethod.jsp"></jsp:include><br><br><br><br>
-		<jsp:include page="WEB-INF/UserViews/credit_debit.jsp"></jsp:include>
+	<jsp:include page="WEB-INF/userviews/PaymentMethod.jsp"></jsp:include><br><br><br><br>
+		<jsp:include page="WEB-INF/userviews/credit_debit.jsp"></jsp:include>
 	<br><br><br><br>
 
 	</c:if>
 	
 	<c:if test="${ShowpaypalPage}">
 	<br><br><br>
-	<jsp:include page="WEB-INF/UserViews/PaymentMethod.jsp"></jsp:include><br><br><br><br>
-		<jsp:include page="WEB-INF/UserViews/paypal.jsp"></jsp:include>
+	<jsp:include page="WEB-INF/userviews/PaymentMethod.jsp"></jsp:include><br><br><br><br>
+		<jsp:include page="WEB-INF/userviews/paypal.jsp"></jsp:include>
 	<br><br><br><br>
 
 	</c:if>
 	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<!-- Displaying All Cart -->
+	<c:if test="${not empty ShowingAllCart}">
+	<center><h4 style="color: green">${ShowingAllCart}</h4></center>
+ 		<jsp:include page="WEB-INF/userviews/AllCarts.jsp"></jsp:include>
+	<br><br><br><br>
+	</c:if>
+	
+	
+	
+	
+	
+	<c:if test="${not empty CartAddedSuccessMessage}">
+	<center><h4 style="color: green">${CartAddedSuccessMessage}</h4></center>
+ 		<jsp:include page="WEB-INF/userviews/AllCarts.jsp"></jsp:include>
+	<br><br><br><br>
+	</c:if>
 	
 	
 	
@@ -320,7 +345,7 @@
 	
 	<c:if test="${userclickedDemo}">
 	<br><br><br>
-		<jsp:include page="WEB-INF/UserViews/PaymentMethod.jsp"></jsp:include>
+		<jsp:include page="WEB-INF/userviews/PaymentMethod.jsp"></jsp:include>
 	<br><br><br><br>
 
 	</c:if>

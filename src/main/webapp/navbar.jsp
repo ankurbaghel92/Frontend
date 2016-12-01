@@ -23,6 +23,8 @@
 			<li><a href="about-us">ABOUT US</a></li>
 			<li><a href="contact-us">CONTACT US</a></li>
 			<li><a href="demo">Demo</a></li>
+			<li> <a class="btn btn-success" href="cart_checkout"></a>
+			</li>
 
 			
 
@@ -33,7 +35,7 @@
 
 		<ul class="nav navbar-nav navbar-right">
 		<c:if test="${not empty UserLoginSuccessMessage}">
-		<li><a href="user-register"><span
+		<li><a href="mycart"><span
 					class="glyphicon glyphicon-shopping-cart"></span> My Cart</a></li>
 			<li><a href="login"><span
 					class="glyphicon glyphicon-log-out"></span>Logout</a></li>	

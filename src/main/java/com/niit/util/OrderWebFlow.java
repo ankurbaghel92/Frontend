@@ -1,12 +1,14 @@
 package com.niit.util;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import com.niit.yamahaonlinebackend.model.BillingAddress;
 import com.niit.yamahaonlinebackend.model.PaymentMethod;
 import com.niit.yamahaonlinebackend.model.ShippingAddress;
 import com.niit.yamahaonlinebackend.model.UserOrder;
 
+@Component
 public class OrderWebFlow {
 	
 	@Autowired
@@ -48,7 +50,7 @@ public class OrderWebFlow {
 	public String addPaymentMethod(UserOrder userOrder, PaymentMethod paymentMethod)
 	{
 		try{
-			userOrder.setPay_method(paymentMethod.getPaymentmethod());
+			userOrder.setPaymentMethod(paymentMethod);
 		}
 		catch(Exception e)
 		{

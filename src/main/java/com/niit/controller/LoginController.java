@@ -55,7 +55,8 @@ public class LoginController {
 		String email = user.getEmail();
 		session.setAttribute("email", email);
 		session.setAttribute("Username", username);
-		mv.addObject("UserLoginSuccessMessage", "You are Successfully Logged in");
+		mv.addObject("ShowCarousel", "True");
+	session.setAttribute("UserLoginSuccessMessage", "Welcome");
 		log.debug("Ending of the CheckLogin Method");
 
 	return mv;

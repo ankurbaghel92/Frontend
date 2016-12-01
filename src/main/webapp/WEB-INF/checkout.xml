@@ -12,10 +12,10 @@
  <var name="paymentMethod" class="com.niit.yamahaonlinebackend.model.PaymentMethod"/>
  
  <on-start>
- 	<evaluate expression="OrderWebflow.initFlow()" result="flowscope.userOrder"></evaluate>
+ 	<evaluate expression="orderWebFlow.initFlow()" result="flowScope.userOrder"></evaluate>
  </on-start>
  
- <view-state id="flowExecutor" view="user/shippingAddress" model="shippingAddress"> 
+ <view-state id="flowExecutor" view="shippingAddress" model="shippingAddress"> 
  	<transition on="submitShippingAddress" to="shippingDetails"></transition>
  </view-state>
  

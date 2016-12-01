@@ -51,6 +51,7 @@ public class ProductController {
 			ModelAndView mv = new ModelAndView("home");
 			product=productDAO.get(ProductId);
 			mv.addObject("ProductId", ProductId);
+			mv.addObject("Productname", product.getName());
 			mv.addObject("product", product);
 			mv.addObject("productlist", productDAO.list());
 		    System.out.println(product.getName());	
@@ -96,7 +97,7 @@ public class ProductController {
 		
 		FileUtil.Upload("D:\\DT NIIT\\yamahaonline\\ProductImages", file, product.getId()+".jpg");
 		
-/*		FileUtil.Upload("/Images", file, product.getId()+".jpg");
+/*		FileUtil.Upload("Images/", file, product.getId()+".jpg");
 */
 		productDAO.save(product);
 		mv.addObject("product", product);
