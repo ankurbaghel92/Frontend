@@ -22,7 +22,10 @@ th, td {
     padding: 5px;
 }
  
-
+a
+{
+text-decoration: none;
+}
 
 
 
@@ -44,16 +47,13 @@ th, td {
 		<th><h4><strong>Price</strong></h4></th>
 		</tr>
 		 <c:forEach items="${cartlist}" var="cart">
-		<%--  <c:url var="modifycategory" value="/ModifyCategory?cid=${category.id}"></c:url>
-		  <c:url var="deletecategory" value="/DeleteCategory?cid=${category.id}"></c:url>
- --%> 	<tr style="height: 30px">
+		  <c:url var="deletecart" value="/DeleteCart?cid=${cart.id}"></c:url>
+	<tr style="height: 30px">
 		<td>${cart.id}</td>
 		<td>${cart.product_Name}</td>
 		<td>${cart.quantity}</td>
 		<td>${cart.price}</td>
-		
-		 <td><a href="${modifycategory}">Modify</a></td>
-		<td><a href="${deletecart}">Delete</a></td>
+		<td><a class="btn btn-lg btn-warning" href="${deletecart}">Delete</a></button></td>
 	 	</tr>
 		</c:forEach> 		
 		</table><br><br>

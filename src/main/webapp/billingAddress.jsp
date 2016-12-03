@@ -25,7 +25,7 @@ label{margin-bottom: 20px}
 <body>
 <div class="container col-md-6">
 
-<form action="" class="well form-veritical" >
+<form:form action="" class="well form-veritical" modelAttribute="billingAddress" >
 <div class="row">
 <center><h3><strong></strong>Add Billing Address</h3></center> 
 <h1 style="background-color: #c4e17f; border-radius: 5px; height: 5px"></h1>
@@ -76,15 +76,14 @@ label{margin-bottom: 20px}
 </div>
 <div class="row">
 <div class="col-md-3 col-md-offset-4">
-<input type="submit" name="eventId_submitBillingAddress" class="btn btn-success btn-lg" value="Save">
+<input type="submit" name="_eventId_submitBillingAddress" class="btn btn-success btn-lg" value="Save">
 </div>
 <div class="col-md-3">
-<input type="submit" name="eventId_cancel" class="btn btn-danger btn-lg" value="Cancel">
+<input type="submit" name="_eventId_cancel" class="btn btn-danger btn-lg" value="Cancel">
 </div>
 </div>
 
-</form>
-
+</form:form>
 
 </div>
 

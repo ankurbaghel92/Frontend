@@ -286,7 +286,7 @@
 	
 	
 	
-	<c:if test="${ShowCODPage}">
+	<%-- <c:if test="${ShowCODPage}">
 	<br><br><br>
 	<jsp:include page="WEB-INF/userviews/PaymentMethod.jsp"></jsp:include><br><br><br><br>
 	<br><br><br><br>
@@ -311,7 +311,7 @@
 
 	</c:if>
 	
-	
+ --%>	
 	
 	
 	
@@ -322,16 +322,6 @@
 	
 	<!-- Displaying All Cart -->
 	<c:if test="${not empty ShowingAllCart}">
-	<center><h4 style="color: green">${ShowingAllCart}</h4></center>
- 		<jsp:include page="WEB-INF/userviews/AllCarts.jsp"></jsp:include>
-	<br><br><br><br>
-	</c:if>
-	
-	
-	
-	
-	
-	<c:if test="${not empty CartAddedSuccessMessage}">
 	<center><h4 style="color: green">${CartAddedSuccessMessage}</h4></center>
  		<jsp:include page="WEB-INF/userviews/AllCarts.jsp"></jsp:include>
 	<br><br><br><br>
@@ -340,16 +330,27 @@
 	
 	
 	
+		<!-- If Add to CArt is Successful -->
+		<c:if test="${not empty CartAddedSuccessMessage}">
+	<center><h4 style="color: green">${CartAddedSuccessMessage}</h4></center>
+		<center><h4 style="color: green">${CartDeletedSuccessMessage}</h4></center>
+ 		<jsp:include page="WEB-INF/userviews/AllCarts.jsp"></jsp:include>
+	<br><br><br><br>
+	</c:if>
 	
 	
 	
-	<c:if test="${userclickedDemo}">
+	
+	
+	
+	
+	<%-- <c:if test="${userclickedDemo}">
 	<br><br><br>
 		<jsp:include page="WEB-INF/userviews/PaymentMethod.jsp"></jsp:include>
 	<br><br><br><br>
 
 	</c:if>
-
+ --%>
 	
 
 <c:if test="${userclickedFZ}">

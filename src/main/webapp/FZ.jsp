@@ -98,7 +98,7 @@ th, td {
 </div>
 <h3 class="col-md-offset-1" style="color:green">YAMAHA FZ Performance And Specifications</h3>
 <div class="row bottom-container col-md-offset-1 col-md-10">
-<table style="width: 100%;border-spacing:15px">
+<table class="table" style="width: 100%;border-spacing:15px">
 <tr style="height: 30px" >
 <th colspan="2"><h4><strong><span class="glyphicon glyphicon-time">PERFORMANCE</span></strong></h4></th>
 <th colspan="2"><h4><strong><span class="glyphicon glyphicon-wrench">ENGINE</span></strong></h4></th>

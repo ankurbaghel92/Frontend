@@ -4,8 +4,10 @@ import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
+import org.hibernate.type.descriptor.java.CalendarDateTypeDescriptor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -54,10 +56,9 @@ public class CartController {
 	
 	
 	@RequestMapping(value="/AddToCart",method=RequestMethod.GET)
-	public ModelAndView AddtoCart(@RequestParam("pid") String Id,HttpSession session)
+	public String AddtoCart(@RequestParam("pid") String Id,HttpSession session,Model model)
 	{
 		System.out.println(Id);
-		ModelAndView mv= new ModelAndView("home");
 		Product product = productDAO.get(Id);
 		String email = (String) session.getAttribute("email");
 		cart.setUser_Id(email);
@@ -66,9 +67,26 @@ public class CartController {
 		cart.setId(cartDAO.getMaxId());
 		cart.setProduct_Name(product.getName());
 		cartDAO.Save(cart);
-		mv.addObject("CartAddedSuccessMessage", "true");
-		return mv;
+		model.addAttribute("CartAddedSuccessMessage", "Thank you! Product Has Been Added to CArt");
+		return "redirect:/mycart";
 	}
 	
 	
+	@RequestMapping(value="/DeleteCart",method=RequestMethod.GET)
+	public String DeleteCart(@RequestParam("cid") Integer Id,HttpSession session,Model model)
+	{		
+		cart= cartDAO.get(Id);
+		cartDAO.deleteByCartId(cart);
+		model.addAttribute("CartDeletedSuccessMessage", "Thank you! Product Has Been Deleted from CArt");
+		return "redirect:/mycart";
+
+	
+/*	return mv;
+*/	
+	
+	
+	
+	
+	
+	}
 	}

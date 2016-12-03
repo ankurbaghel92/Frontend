@@ -17,19 +17,29 @@ a{text-decoration: none}
 </style>
 
 
-<body ng-app="myapp">
+<body>
 
 <div class="container col-md-6">
 <div class="row">
 <center><h3 style="color: #17202a"><strong></strong>Select Payement Method</h3></center> 
 <h1 style="background-color: #c4e17f; border-radius: 5px; height: 5px"></h1>
 </div>
-<a href="cod"><button type="button" class="btn btn-primary">Cash On Delivery</button></a>
+<form:form modelAttribute="paymentMethod">
+<form:select path="paymentmethod">
+<form:option value="Cash On Delivery">Cash On Delivery</form:option>
+<form:option value="Credit Card/Debit Card">Credit Card/Debit Card</form:option>
+<form:option value="Ecash">Ecash</form:option>
+</form:select>
+<input type="submit" name="_eventId_submitPaymentMethod" class="btn btn-success btn-lg" value="Save">
+
+
+</form:form>
+<!-- <a href="cod"><button type="button" class="btn btn-primary">Cash On Delivery</button></a>
 <a href="credit_debit"><button type="button" class="btn btn-success"> Credit Card/Debit Card</button></a>
 <a href="paypal"><button type="button" class="btn btn-warning">PayPal</button></a>
 
-</div>
-
+ --></div>
+<!-- 
 <div ng-view></div>
 
 
@@ -63,7 +73,7 @@ app.config(function($routeProvider) {
 
 
 
-
+ -->
 
 </body>
 </html>
