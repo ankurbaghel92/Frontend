@@ -15,12 +15,13 @@
  	<evaluate expression="orderWebFlow.initFlow()" result="flowScope.userOrder"></evaluate>
  </on-start>
  
- <view-state id="flowExecutor" view="shippingAddress" model="shippingAddress"> 
+ <view-state id="flowExecutor" view="shippingAddress" model="flowScope.shippingAddress"> 
  	<transition on="submitShippingAddress" to="shippingDetails"></transition>
  </view-state>
  
  <action-state id="shippingDetails">
- 	<evaluate expression="orderWebFlow.addShippingAddress(flowScope.userOrder,shippingAddress)"></evaluate>
+<evaluate expression="orderWebFlow.addShippingAddress(flowScope.userOrder,shippingAddress)"></evaluate>
+ 	
  	<transition on="success" to="viewBillingDetails"></transition>
  	<transition on="fail" to="cart_checkout"></transition>
  </action-state>
@@ -32,6 +33,7 @@
  
  <action-state id="billingDetails">
  	<evaluate expression="orderWebFlow.addBillingAddress(flowScope.userOrder,billingAddress)"></evaluate>
+ 	
  	<transition on="success" to="viewPaymentDetails"></transition>
  </action-state>
  
@@ -41,10 +43,11 @@
  
  <action-state id="paymentDetails">
  	<evaluate expression="orderWebFlow.addPaymentMethod(flowScope.userOrder,paymentMethod)"></evaluate>
+ 	
  	<transition on="success" to="orderConfirm"></transition>
  </action-state>
  
- <view-state id="orderConfirm" view="orderConfirmed" model="userOrder">
+ <view-state id="orderConfirm" view="orderConfirmed" model="order">
  	<transition on="finalHome" to="toHome"></transition>
   </view-state>
  

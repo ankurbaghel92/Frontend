@@ -14,10 +14,10 @@
 
 </head>
 <body>
-<c:set var="imagefolder" value="D:\\DT NIIT\\yamahaonline\\ProductImages\\"></c:set>
-
-<%--  <c:set var="imagefolder" value="D:\\DT NIIT\\yamahaonline\\ProductImages\\"></c:set>
- --%> 
+<%-- <c:set var="imagefolder" value="D:\\DT NIIT\\yamahaonline\\ProductImages\\"></c:set>
+ --%>
+ <c:set var="imagefolder" value="resources/img/"></c:set>
+ 
  
  <div class="container col-md-8">
 			<div class="list col-md-4 ">
@@ -27,7 +27,6 @@
 </div>
 </div>
 <c:url var="addtocart" value="/AddToCart?pid=${ProductId}"></c:url>
-
  <a class="btn btn-success" href="cart_checkout">Checkout</a>
  <a class="btn btn-success" href="${addtocart}">Add To Cart</a>
 </div>

@@ -51,6 +51,7 @@
 			
 			
 			<!-- If User Registration Is SuccessFul -->
+			<br>
 			<c:if test="${not empty UserRegisterSuccess}">
 						<center>
 				<h4 style="color: green">${UserRegisterSuccessMessage}</h4>
@@ -58,6 +59,48 @@
 				<jsp:include page="carousel.jsp"></jsp:include>	<br><br><br><br>
 				
 			</c:if>
+			
+				<!-- If Log Out Is SuccessFul -->
+			<c:if test="${logout}">
+	<br>
+	<center>
+	<h4 style="color: green">${logOutMessage} ${Username}</h4>
+	<br><br></center>
+		<jsp:include page="carousel.jsp"></jsp:include>
+	<br><br><br><br>
+
+	</c:if>
+	
+	
+		<!-- If Spring Security Fails-->
+			<c:if test="${accessdenied}">
+	<div class="alert alert-danger">
+	<strong>${AccessDenied}</strong>
+	</div>
+		<jsp:include page="carousel.jsp"></jsp:include>
+	<br><br><br><br>
+
+	</c:if>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+			
+			
+			
+			
 			
 			
 			<!-- If User Registration is not Successful -->

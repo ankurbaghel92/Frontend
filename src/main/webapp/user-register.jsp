@@ -26,9 +26,10 @@
 						<div class="form-group">
 							<div class="input-group">
 								<span class="input-group-addon"> <i
-									class="glyphicon glyphicon-user"></i></span> <form:input type="text"
-									name="fname" id="fname" placeholder="First Name" path="fname"
-									class="form-control input-lg" tabindex="1"/>
+									class="glyphicon glyphicon-user"></i></span>
+									<form:input type="text" name="fname" id="fname" placeholder="First Name" path="fname" class="form-control input-lg" tabindex="1"/>
+							       <font color="RED"><form:errors path="fname"></form:errors></font>
+									
 							</div>
 						</div>
 					</div>
@@ -38,6 +39,7 @@
 								<span class="input-group-addon"> <i
 									class="glyphicon glyphicon-user"></i></span>
 									<form:input type="text" name="lname" placeholder="Last Name" path="lname" class="form-control input-lg" tabindex="2"/>
+									<font color="RED"><form:errors path="lname"></form:errors></font>
 							</div>
 						</div>
 					</div>
@@ -48,9 +50,9 @@
 						<div class="form-group">
 							<div class="input-group">
 								<span class="input-group-addon"><i
-									class="glyphicon glyphicon-envelope"></i></span> <form:input type="text"
-									name="email_id" id="enail-id" class="form-control input-lg"
-									path="email" placeholder="Email Id" tabindex="5"/>
+									class="glyphicon glyphicon-envelope"></i></span>
+									<form:input type="email" name="email_id" id="enail-id" class="form-control input-lg" path="email" placeholder="Email Id" tabindex="3"/>
+									<font color="RED"><form:errors path="email"></form:errors></font>
 							</div>
 						</div>
 					</div>
@@ -60,9 +62,9 @@
 							<div class="input-group">
 								<span class="input-group-addon"> <i
 									class="glyphicon glyphicon-earphone"></i>
-								</span> <form:input type="text" name="mobile_no" id="mobile_no"
-									placeholder="Mobile Number" path="mobile"
-									class="form-control input-lg" tabindex="4"/>
+								</span>
+							<form:input type="text" name="mobile_no" id="mobile_no" placeholder="Mobile Number" path="mobile" class="form-control input-lg" tabindex="4" />
+							<font color="RED"><form:errors path="mobile"></form:errors></font>
 							</div>
 						</div>
 					</div>
@@ -74,16 +76,14 @@
 		<div class="row">
 			<div class="col-md-6">
 				<div class="form-group">
-					<form:input type="password" name="password" id="password"
-						placeholder="Password" path="password" class="form-control input-lg"
-						tabindex="6"/>
+					<form:input type="password" name="password" id="password" placeholder="Password" path="password" class="form-control input-lg"	tabindex="5"/>
+					<font color="RED"><form:errors path="password"></form:errors></font>
 				</div>
 			</div>
 			<div class="col-md-6">
 				<div class="form-group">
-					<form:input type="password" name="con-password" id="con-password" path="ComPassword"
-						placeholder="Confirm Password" 
-						class="form-control input-lg" tabindex="2"/>
+				<form:input type="password" name="con-password" id="con-password" path="ComPassword" placeholder="Confirm Password"	class="form-control input-lg" tabindex="6"/>
+				<font color="RED"><form:errors path="ComPassword"></form:errors></font>
 				</div>
 			</div>
 		</div>
@@ -99,8 +99,7 @@
 		<div class="row">
 			<div class="col-md-6">
 				<div class="form-group">
-					<input type="submit" class="btn btn-primary btn-block btn-lg"
-						tabindex="7" value="Register">
+					<input type="submit" class="btn btn-primary btn-block btn-lg" tabindex="7" value="Register" onclick="return validate()" >
 				</div>
 			</div>
 		
@@ -109,5 +108,7 @@
 </form:form>
 
 	</div>
+	
+	
 </body>
 </html>

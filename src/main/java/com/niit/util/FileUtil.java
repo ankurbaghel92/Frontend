@@ -4,13 +4,20 @@ import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.web.multipart.MultipartFile;
+
+import com.niit.controller.ProductController;
 
 
 public class FileUtil {
-	
+	public static Logger log = LoggerFactory.getLogger(FileUtil.class.getName());
+
 	public static void Upload(String path,MultipartFile file,String filename)
 	{
+		log.debug("FileUtil ---> Starting of the Method DisplayAllCart()");
+
 		if(!file.isEmpty()){
 			
 			try{
@@ -25,11 +32,15 @@ public class FileUtil {
 				BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(ServerFile));
 			stream.write(bytes);
 			stream.close();
+			log.debug("FileUtil ---> Ending of the Method DisplayAllCart()");
+
 			}
 catch(Exception e)
 			{
 	e.printStackTrace();
 	System.out.println(e);
+	log.debug("FileUtil ---> Ending of the Method DisplayAllCart()");
+
 			}
 		}
 		

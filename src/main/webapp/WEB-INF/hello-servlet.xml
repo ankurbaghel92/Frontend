@@ -33,6 +33,8 @@ http://www.springframework.org/schema/mvc
     </bean>
 	
 		<mvc:resources mapping="/Images/**" location="/Images/"></mvc:resources>
+				<mvc:resources mapping="/resources/**" location="/resources/"></mvc:resources>
+		
     <mvc:annotation-driven/>
 	
 	

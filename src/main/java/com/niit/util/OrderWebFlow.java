@@ -31,7 +31,9 @@ public class OrderWebFlow {
 	{
 		log.debug("WEBFLOW-->  Stating the Method initFlow()");
 		userOrder = new UserOrder();
-		log.debug("WEBFLOW-->  Ending the Method initFlow()");
+		/*userOrder.setBillingAddress(billingAddress);
+		userOrder.setShippingAddress(shippingAddress);
+*/		log.debug("WEBFLOW-->  Ending the Method initFlow()");
 		return userOrder;
 	}
 	

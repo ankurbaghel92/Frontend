@@ -17,7 +17,7 @@
 </head>
 <body>
 	<div class="container col-md-8">
-			<form:form method="post" action="loginform" class="well form-horizontal" modelAttribute="login">
+			<form:form method="post" action="validate" class="well form-horizontal" modelAttribute="login">
 				<h2 style="color:green">
 					Login Here<small style="color:green">...You are our Existing Customer</small>
 				</h2>
@@ -30,9 +30,10 @@
 						<div class="form-group">
 							<div class="input-group">
 								<span class="input-group-addon"><i
-									class="glyphicon glyphicon-user"></i></span> <form:input type="text" 
-									class="form-control input-lg" path="username" name="username"
-									placeholder="Email ID" />
+									class="glyphicon glyphicon-user"></i></span> 
+									<form:input type="text" class="form-control input-lg" path="username" name="username" placeholder="Email ID" tabindex="1" required="true" />
+									<font color="RED"><form:errors path="username"></form:errors></font>
+									
 							</div>
 						</div>
 					</div></div>
@@ -45,9 +46,10 @@
 							<div class="form-group">
 								<div class="input-group">
 									<span class="input-group-addon"><i
-										class="glyphicon glyphicon-user"></i></span> <form:input type="password"
-										placeholder="Password" name="password"
-										class="form-control input-lg" tabindex="2" path="password" />
+										class="glyphicon glyphicon-user"></i></span>
+										<form:input type="password" placeholder="Password" name="password" class="form-control input-lg" tabindex="2" path="password" />
+										<font color="RED"><form:errors path="password"></form:errors></font>
+										
 								</div>
 							</div>
 						</div>

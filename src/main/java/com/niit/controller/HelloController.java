@@ -43,7 +43,9 @@ public class HelloController {
 
 	@RequestMapping(value = "/contact-us")
 	public String contactus(Model model) {
+		log.debug("HelloController ---> Starting of the Method Contactus()");
 		model.addAttribute("userclickedcontact", "true");
+		log.debug("HelloController --->Ending of the Method Contactus()");
 		return "home";
 	}
 	/*
@@ -54,7 +56,7 @@ public class HelloController {
 	
 	@RequestMapping({"/","/home"})
 	public ModelAndView index(HttpSession session) {
-		log.debug("Starting of the Method Index");
+		log.debug("HelloController ---> Starting of the Method Index()");
 		ModelAndView mv = new ModelAndView("/home");
 		session.setAttribute("category", category);
 		session.setAttribute("product", product);
@@ -62,31 +64,36 @@ public class HelloController {
 		session.setAttribute("categorylist", categoryDAO.list());
 		mv.addObject("ShowCarousel", "true");
 		System.out.println("Index method");
-		log.debug("Ending of the Method Index");
+		log.debug("HelloController --->Ending of the Method Index()");
 		return mv;
 	}
 
-	/*
-	 * @RequestMapping(value="/login") public String login(Model model){
-	 * model.addAttribute("userclickedlogin","true"); return "home"; }
-	 */
-
-	/*
-	 * @RequestMapping(value="/InsertSupplier") public String
-	 * InsertSupplier(Model model){
-	 * model.addAttribute("userclickedInsertSupplier","true"); return "home"; }
-	 */
+	
 	@RequestMapping(value = "/about-us")
 	public String aboutus(Model model) {
+		log.debug("HelloController ---> Starting of the Method Aboutus()");
 		model.addAttribute("userclickedAbout", "true");
+		log.debug("HelloController --->Ending of the Method Aboutus()");
 		return "home";
 	}
-
+/*
 	@RequestMapping(value = "/demo")
 	public String demo(Model model) {
 		model.addAttribute("userclickedDemo", "true");
 		return "home";
+	}*/
+	
+	@RequestMapping(value="/accessdenied")
+	public String accessDenied(Model model)
+	{
+		log.debug("HelloController ---> Starting of the Method accessDenied()");
+		model.addAttribute("AccessDenied", "You Are not Authorized to Access this Page");
+		model.addAttribute("accessdenied", "true");
+		log.debug("HelloController ---> Ending of the Method accessDenied()");
+		return "home";
 	}
+	
+	
 	
 	
 	}

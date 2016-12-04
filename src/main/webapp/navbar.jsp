@@ -22,9 +22,8 @@
 			<li class="active"><a href="home">HOME</a></li>
 			<li><a href="about-us">ABOUT US</a></li>
 			<li><a href="contact-us">CONTACT US</a></li>
-			<li><a href="demo">Demo</a></li>
-			<li> <a class="btn btn-success" href="cart_checkout"></a>
-			</li>
+<!-- 			<li> <a class="btn btn-success" href="cart_checkout"></a>
+ -->			</li>
 
 			
 
@@ -37,19 +36,19 @@
 		<c:if test="${not empty UserLoginSuccessMessage}">
 		<li><a href="mycart"><span
 					class="glyphicon glyphicon-shopping-cart"></span> My Cart</a></li>
-			<li><a href="login"><span
+			<li><a href="logout"><span
 					class="glyphicon glyphicon-log-out"></span>Logout</a></li>	
 		</c:if>
 		
 			<c:if test="${not empty AdminSuccessMessage}">
-			<li><a href="login"><span
+			<li><a href="logout"><span
 					class="glyphicon glyphicon-log-out"></span>Logout</a></li>	
 		</c:if>
 		
 		<c:if test="${empty UserLoginSuccessMessage && empty AdminSuccessMessage}"> 
 			<li><a href="user-register"><span
 					class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-			<li><a href="login"><span
+			<li><a href="showloginform"><span
 					class="glyphicon glyphicon-log-in"></span> Login</a></li>
 					</c:if>
 		</ul>

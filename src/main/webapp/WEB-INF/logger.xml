@@ -9,8 +9,10 @@
 </appender>
 
 <appender name="FILE" class="ch.qos.logback.core.FileAppender">
-	<file> D:\DT NIIT\yamahonlinelogs\log-${byDay}.txt</file> 
-		<append>true</append>
+<!-- 	<file> D:/DT NIIT/yamahonlinelogs/log-${byDay}.txt</file> 
+ -->		
+ <file> D:/DT NIIT/yamahonlinelogs/mylog.log</file> 
+ <append>true</append>
 			<encoder>
 				<pattern>
 					%-4relative [%thread] %-5level %logger{35} - %msg%n
@@ -19,8 +21,8 @@
 </appender>
 
 
- <logger name="com.niit" level="TRACE"/>
-
+ <logger name="com.niit" level="TRACE">	<appender-ref ref="FILE"></appender-ref>
+ </logger>
 <root level="debug">
 	<appender-ref ref="FILE"></appender-ref>
 	<appender-ref ref="STDOUT"></appender-ref>

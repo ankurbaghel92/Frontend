@@ -9,8 +9,9 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+
 <body>
-<body>
+${error }
 <div class="container col-md-8" align="center" style="background-color:grey">
  <h3 class=first><span>YAMAHA MOTORS PVT LTD</span></h3>
   <h1 style="background-color:#c4e17f;border-radius:5px;height: 5px "></h1>
