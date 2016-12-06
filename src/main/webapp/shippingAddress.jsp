@@ -24,18 +24,18 @@ label{margin-bottom: 20px}
 	
 <body>
 <div class="container col-md-6">
-
-<form:form action="" class="well form-veritical" modelAttribute="shippingAddress" >
 <div class="row">
 <center><h3><strong></strong>Add Shipping Address</h3></center> 
 <h1 style="background-color: #c4e17f; border-radius: 5px; height: 5px"></h1>
 </div>
+
+<form:form action="" class="well form-veritical" modelAttribute="shippingAddress" >
 <div class="row">
 <div class="col-md-4">
 <label><h4><strong>Address Line1</strong></h4></label>
 </div>
 <div class="col-md-6">
-<input type="text" name="address_line1" class="form-control input-lg" >
+<form:input type="text" name="address_line1" path="address_line1" class="form-control input-lg"></form:input>
 </div>
 </div>
 
@@ -44,7 +44,7 @@ label{margin-bottom: 20px}
 <label><h4><strong>Address Line2</strong></h4></label>
 </div>
 <div class="col-md-6">
-<input type="text" name="address_line2" class="form-control input-lg" >
+<form:input type="text" name="address_line2" path="address_line2" class="form-control input-lg" ></form:input>
 </div>
 </div>
 
@@ -53,7 +53,7 @@ label{margin-bottom: 20px}
 <label><h4><strong>State</strong></h4></label>
 </div>
 <div class="col-md-6">
-<input type="text" name="state"class="form-control input-lg"  >
+<form:input type="text" name="state" path="state"   class="form-control input-lg" ></form:input>
 </div>
 </div>
 
@@ -62,7 +62,7 @@ label{margin-bottom: 20px}
 <label><h4><strong>City</strong></h4></label>
 </div>
 <div class="col-md-6">
-<input type="text" name="city" class="form-control input-lg">
+<form:input type="text" name="city" path="city"  class="form-control input-lg"></form:input>
 </div>
 </div>
 
@@ -71,7 +71,7 @@ label{margin-bottom: 20px}
 <label><h4><strong>Pincode</strong></h4></label>
 </div>
 <div class="col-md-6">
-<input type="text" name="picode" class="form-control input-lg" >
+<form:input type="text" name="pincode" class="form-control input-lg" path="pincode" ></form:input>
 </div>
 </div>
 <div class="row">

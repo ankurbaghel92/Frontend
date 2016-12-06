@@ -22,8 +22,8 @@
 			<li class="active"><a href="home">HOME</a></li>
 			<li><a href="about-us">ABOUT US</a></li>
 			<li><a href="contact-us">CONTACT US</a></li>
-<!-- 			<li> <a class="btn btn-success" href="cart_checkout"></a>
- -->			</li>
+			<li> <a class="btn btn-success" href="cart_checkout"></a>
+			</li>
 
 			
 

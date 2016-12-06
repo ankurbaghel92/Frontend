@@ -8,19 +8,19 @@
  <var name="shippingAddress" class="com.niit.yamahaonlinebackend.model.ShippingAddress"/>
  <var name="billingAddress"  class="com.niit.yamahaonlinebackend.model.BillingAddress"/>
  <var name="cart" 			 class="com.niit.yamahaonlinebackend.model.Cart"/>
-<var name="userOrder" class="com.niit.yamahaonlinebackend.model.UserOrder"/>
+<var name="order" class="com.niit.yamahaonlinebackend.model.Order"/>
  <var name="paymentMethod" class="com.niit.yamahaonlinebackend.model.PaymentMethod"/>
  
  <on-start>
- 	<evaluate expression="orderWebFlow.initFlow()" result="flowScope.userOrder"></evaluate>
+ 	<evaluate expression="orderWebFlow.initFlow()" result="flowScope.order"></evaluate>
  </on-start>
  
- <view-state id="flowExecutor" view="shippingAddress" model="flowScope.shippingAddress"> 
+ <view-state id="flowExecutor" view="shippingAddress" model="shippingAddress"> 
  	<transition on="submitShippingAddress" to="shippingDetails"></transition>
  </view-state>
  
  <action-state id="shippingDetails">
-<evaluate expression="orderWebFlow.addShippingAddress(flowScope.userOrder,shippingAddress)"></evaluate>
+<evaluate expression="orderWebFlow.addShippingAddress(flowScope.order,shippingAddress)"></evaluate>
  	
  	<transition on="success" to="viewBillingDetails"></transition>
  	<transition on="fail" to="cart_checkout"></transition>
@@ -32,7 +32,7 @@
  </view-state>
  
  <action-state id="billingDetails">
- 	<evaluate expression="orderWebFlow.addBillingAddress(flowScope.userOrder,billingAddress)"></evaluate>
+ 	<evaluate expression="orderWebFlow.addBillingAddress(flowScope.order,billingAddress)"></evaluate>
  	
  	<transition on="success" to="viewPaymentDetails"></transition>
  </action-state>
@@ -42,7 +42,7 @@
  </view-state>
  
  <action-state id="paymentDetails">
- 	<evaluate expression="orderWebFlow.addPaymentMethod(flowScope.userOrder,paymentMethod)"></evaluate>
+ 	<evaluate expression="orderWebFlow.addPaymentMethod(flowScope.order,paymentMethod)"></evaluate>
  	
  	<transition on="success" to="orderConfirm"></transition>
  </action-state>

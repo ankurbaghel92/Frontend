@@ -5,11 +5,10 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.niit.controller.LoginController;
-import com.niit.yamahaonlinebackend.model.BillingAddress;
 import com.niit.yamahaonlinebackend.model.PaymentMethod;
 import com.niit.yamahaonlinebackend.model.ShippingAddress;
-import com.niit.yamahaonlinebackend.model.UserOrder;
+import com.niit.yamahaonlinebackend.model.BillingAddress;
+import com.niit.yamahaonlinebackend.model.Order;
 
 @Component
 public class OrderWebFlow {
@@ -17,32 +16,31 @@ public class OrderWebFlow {
 
 	
 	@Autowired
-	UserOrder userOrder;
+	Order order;
 	
-	@Autowired
-	ShippingAddress shippingAddress;
-	
-	@Autowired
-	BillingAddress billingAddress;
 	
 
-	public UserOrder initFlow()
+	public Order initFlow()
 	
 	{
 		log.debug("WEBFLOW-->  Stating the Method initFlow()");
-		userOrder = new UserOrder();
-		/*userOrder.setBillingAddress(billingAddress);
-		userOrder.setShippingAddress(shippingAddress);
+		Order order = new Order();
+		/*order.setBillingAddress(billingAddress);
+		order.setShippingAddress(shippingAddress);
 */		log.debug("WEBFLOW-->  Ending the Method initFlow()");
-		return userOrder;
+		return order;
 	}
 	
-	public String addShippingAddress(UserOrder userOrder, ShippingAddress shippingAddress)
+	public String addShippingAddress(Order order, ShippingAddress shippingAddress)
 	{
 		log.debug("WEBFLOW-->  Stating the Method addShippingAddress()");
 
 		try{
-			userOrder.setShippingAddress(shippingAddress);
+			order.setShippingAddress(shippingAddress);
+			String ss = shippingAddress.toString();
+			order.setSa(ss);
+			System.out.println(ss);
+			
 		}
 		catch(Exception e)
 		{
@@ -56,12 +54,14 @@ public class OrderWebFlow {
 		return "success";
 	}
 	
-	public String addBillingAddress(UserOrder userOrder, BillingAddress billingAddress)
+	public String addBillingAddress(Order order, BillingAddress billingAddress)
 	{
 		log.debug("WEBFLOW-->  Stating the Method addBillingAddress()");
 
 		try{
-			userOrder.setBillingAddress(billingAddress);
+			order.setBillingAddress(billingAddress);
+			String ss1=billingAddress.toString();
+			order.setBa(ss1);
 		}
 		catch(Exception e)
 		{
@@ -75,11 +75,11 @@ public class OrderWebFlow {
 		return "success";
 	}
 	
-	public String addPaymentMethod(UserOrder userOrder, PaymentMethod paymentMethod)
+	public String addPaymentMethod(Order order, PaymentMethod paymentMethod)
 	{
 		log.debug("WEBFLOW-->  Stating the Method addPaymentMethod()");
 		try{
-			userOrder.setPaymentMethod(paymentMethod);
+			order.setPaymentMethod(paymentMethod);
 		}
 		catch(Exception e)
 		{

@@ -19,13 +19,11 @@
 <h2>Product Will be Delivered Shortly.</h2>
 <h3>Thank you so much for doing Business with us. Have a Good Day</h3>
 <h4>
-Order Number :- ${userOrder.id }</h4>
-<h4>
-Shipping Address:- ${userOrder.shippingAddress}</h4>
-<h4>
-Billing Address:- ${userOrder.billingAddress}
-</h4>
+Order Number :- ${order.id }</h4>
 
+<h4>   ${order.sa}</h4>
+
+<h4>${order.ba }</h4>
 <form:form>
 <input type="submit" name="_eventId_finalHome" class="btn btn-success btn-lg" value="Save">
 
