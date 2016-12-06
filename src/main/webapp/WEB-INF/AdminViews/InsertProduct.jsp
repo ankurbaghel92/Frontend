@@ -39,7 +39,7 @@ select{ width:240px;height:40px
 					</div>
 					<div class="col-md-4">
 						<div class="input-group">
-							<form:input type="text" placeholder="Product ID" name="ProdId" path="Id"
+							<form:input type="text" placeholder="Product ID" name="ProdId" path="Id" required="true"
 								class="form-control input-lg"></form:input>
 						</div>
 					</div>
@@ -51,7 +51,7 @@ select{ width:240px;height:40px
 					</div>
 					<div class="col-md-4">
 						<div class="input-group">
-							<form:input type="text" placeholder="Product Name" name="ProdName" path="name"
+							<form:input type="text" placeholder="Product Name" name="ProdName" path="name" required="true"
 								class="form-control input-lg"></form:input>
 						</div>
 					</div>
@@ -93,7 +93,7 @@ select{ width:240px;height:40px
 					</div>
 					<div class="col-md-4">
 						<div class="input-group">
-							<form:input type="text" placeholder="Product Name" name="ProdPrice" path="price"
+							<form:input type="text" placeholder="Product Name" name="ProdPrice" path="price" required="true"
 								class="form-control input-lg"></form:input>
 						</div>
 					</div>
@@ -105,7 +105,7 @@ select{ width:240px;height:40px
 					</div>
 					<div class="col-md-4">
 						<div class="input-group">
-							<form:input type="text" placeholder="Product Name" name="ProdStock" path="stock"
+							<form:input type="text" placeholder="Product Name" name="ProdStock" path="stock" required="true"
 								class="form-control input-lg"></form:input>
 						</div>
 					</div>

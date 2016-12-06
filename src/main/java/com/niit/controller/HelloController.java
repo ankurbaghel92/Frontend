@@ -7,13 +7,17 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.niit.yamahaonlinebackend.DAO.CategoryDAO;
+import com.niit.yamahaonlinebackend.DAO.ContactusDAO;
 import com.niit.yamahaonlinebackend.DAO.ProductDAO;
 import com.niit.yamahaonlinebackend.model.Category;
+import com.niit.yamahaonlinebackend.model.Contactus;
 import com.niit.yamahaonlinebackend.model.Product;
 
 
@@ -34,6 +38,9 @@ public class HelloController {
 
 	@Autowired
 	ProductDAO productDAO;
+	
+	@Autowired
+	ContactusDAO contactusDAO;
 
 
 	
@@ -41,18 +48,25 @@ public class HelloController {
 	
 	
 
-	@RequestMapping(value = "/contact-us")
+	@RequestMapping(value = "/contact-us",method = RequestMethod.GET)
 	public String contactus(Model model) {
 		log.debug("HelloController ---> Starting of the Method Contactus()");
 		model.addAttribute("userclickedcontact", "true");
+		model.addAttribute("contactus", new Contactus());
 		log.debug("HelloController --->Ending of the Method Contactus()");
 		return "home";
 	}
-	/*
-	 * @RequestMapping(value="/user-register") public String Register(Model
-	 * model){ model.addAttribute("userclickedRegister","true"); return "home";
-	 * }
-	 */
+	
+	@RequestMapping(value="/SubmitContactUsForm")
+	public ModelAndView SubmitContactUsForm(@ModelAttribute Contactus contactus)
+	{
+		ModelAndView mv = new ModelAndView("home");
+	contactusDAO.save(contactus);
+		mv.addObject("ContactSubmitted", "Thankyou for Showing Interest on us. One of Our employee will definately contact you ");
+		
+		return mv;
+	}
+	
 	
 	@RequestMapping({"/","/home"})
 	public ModelAndView index(HttpSession session) {
@@ -73,6 +87,7 @@ public class HelloController {
 	public String aboutus(Model model) {
 		log.debug("HelloController ---> Starting of the Method Aboutus()");
 		model.addAttribute("userclickedAbout", "true");
+		
 		log.debug("HelloController --->Ending of the Method Aboutus()");
 		return "home";
 	}

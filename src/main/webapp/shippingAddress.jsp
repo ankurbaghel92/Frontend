@@ -35,7 +35,7 @@ label{margin-bottom: 20px}
 <label><h4><strong>Address Line1</strong></h4></label>
 </div>
 <div class="col-md-6">
-<form:input type="text" name="address_line1" path="address_line1" class="form-control input-lg"></form:input>
+<form:input type="text" name="address_line1" path="address_line1" class="form-control input-lg" required="true"></form:input>
 </div>
 </div>
 
@@ -44,7 +44,7 @@ label{margin-bottom: 20px}
 <label><h4><strong>Address Line2</strong></h4></label>
 </div>
 <div class="col-md-6">
-<form:input type="text" name="address_line2" path="address_line2" class="form-control input-lg" ></form:input>
+<form:input type="text" name="address_line2" path="address_line2" class="form-control input-lg" required="true" ></form:input>
 </div>
 </div>
 
@@ -53,7 +53,7 @@ label{margin-bottom: 20px}
 <label><h4><strong>State</strong></h4></label>
 </div>
 <div class="col-md-6">
-<form:input type="text" name="state" path="state"   class="form-control input-lg" ></form:input>
+<form:input type="text" name="state" path="state"  required="true" class="form-control input-lg" ></form:input>
 </div>
 </div>
 
@@ -62,7 +62,7 @@ label{margin-bottom: 20px}
 <label><h4><strong>City</strong></h4></label>
 </div>
 <div class="col-md-6">
-<form:input type="text" name="city" path="city"  class="form-control input-lg"></form:input>
+<form:input type="text" name="city" path="city" required="true"  class="form-control input-lg"></form:input>
 </div>
 </div>
 
@@ -71,7 +71,7 @@ label{margin-bottom: 20px}
 <label><h4><strong>Pincode</strong></h4></label>
 </div>
 <div class="col-md-6">
-<form:input type="text" name="pincode" class="form-control input-lg" path="pincode" ></form:input>
+<form:input type="text" name="pincode" class="form-control input-lg" required="true" path="pincode" pattern="^[1-9][0-9]{5}$" title="PinCode should only contains Numbers and only 5 digits" ></form:input>
 </div>
 </div>
 <div class="row">

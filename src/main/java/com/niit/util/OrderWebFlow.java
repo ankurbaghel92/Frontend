@@ -80,6 +80,8 @@ public class OrderWebFlow {
 		log.debug("WEBFLOW-->  Stating the Method addPaymentMethod()");
 		try{
 			order.setPaymentMethod(paymentMethod);
+			String ss2 =paymentMethod.toString();
+			order.setPm(ss2);
 		}
 		catch(Exception e)
 		{

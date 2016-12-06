@@ -8,12 +8,13 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 
 <body>
 
 	<div class="container col-md-8">
 
-			<form method="post" action="" class="well form-horizontal">
+			<form:form method="post" action="SubmitContactUsForm" class="well form-horizontal" modelAttribute="contactus">
 				<h2 style="color: green">
 					Contact-Us<small style="color: green">...Please Feel Free
 						To Get In Touch </small>
@@ -25,9 +26,8 @@
 						<div class="form-group">
 							<div class="input-group">
 								<span class="input-group-addon"><i
-									class="glyphicon glyphicon-user"></i></span> <input type="text"
-									class="form-control input-lg" id="fname" name="fname"
-									placeholder="First Name" value="">
+									class="glyphicon glyphicon-user"></i></span> 
+	<form:input type="text"	class="form-control input-lg" path="fname" name="fname" placeholder="First Name" required="true" tabindex="1" ></form:input>
 							</div>
 						</div>
 					</div>
@@ -35,9 +35,8 @@
 						<div class="form-group">
 							<div class="input-group">
 								<span class="input-group-addon"><i
-									class="glyphicon glyphicon-user"></i></span> <input type="text"
-									name="lname" id="lname" placeholder="Last Name" required
-									class="form-control input-lg" tabindex="2">
+									class="glyphicon glyphicon-user"></i></span> 
+									<form:input type="text" name="lname" path="lname" placeholder="Last Name" required="true"  class="form-control input-lg" tabindex="2"></form:input>
 							</div>
 						</div>
 					</div>
@@ -48,9 +47,8 @@
 						<div class="form-group">
 							<div class="input-group">
 								<span class="input-group-addon"><i
-									class="glyphicon glyphicon-envelope"></i></span> <input type="text"
-									name="email_id" id="enail-id" class="form-control input-lg"
-									required placeholder="Email Id" tabindex="5">
+									class="glyphicon glyphicon-envelope"></i></span>
+									<form:input type="text" name="email_id" path="emailid" class="form-control input-lg" required="true" placeholder="Email Id" tabindex="3"></form:input>
 							</div>
 						</div>
 					</div>
@@ -59,9 +57,8 @@
 							<div class="input-group">
 								<span class="input-group-addon"> <i
 									class="glyphicon glyphicon-earphone"></i>
-								</span> <input type="text" name="mobile_no" id="mobile_no"
-									placeholder="Mobile Number" required
-									class="form-control input-lg" tabindex="4">
+								</span> 
+								<form:input type="text" name="mobile_no" path="mobile_no" placeholder="Mobile Number" required="true" class="form-control input-lg" tabindex="4"></form:input>
 							</div>
 						</div>
 					</div>
@@ -70,8 +67,7 @@
 				<div class="row">
 					<div class="col-md-12">
 						<div class="form-group">
-							<textarea class="form-control input-lg" id="name" name="name"
-								placeholder="Enter Your Query"></textarea>
+							<form:textarea class="form-control input-lg" path="message" name="message" placeholder="Enter Your Message" required="true" tabindex="5"></form:textarea>
 						</div>
 					</div>
 				</div>
@@ -80,9 +76,8 @@
 					<div class="col-md-offset-4">
 						<div class="col-md-4">
 							<div class="form-group">
-								<a href=""> <input type="submit"
-									class="btn btn-success btn-block btn-lg" tabindex="8"
-									value="Submit">
+								<a href="">
+								<input type="submit" class="btn btn-success btn-block btn-lg" tabindex="6" value="Submit">
 								</a>
 							</div>
 						</div>
@@ -90,7 +85,7 @@
 
 
 				</div>
-			</form>
+			</form:form>
 
 
 		

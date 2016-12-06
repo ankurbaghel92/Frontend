@@ -38,7 +38,7 @@ th, td {
 					</div>
 					<div class="col-md-4">
 						<div class="input-group">
-							<form:input type="text" placeholder="Category ID" name="CatId" path="Id"
+							<form:input type="text" placeholder="Category ID" required="true" name="CatId" path="Id"
 								class="form-control input-lg"></form:input>
 						</div>
 					</div>
@@ -50,7 +50,7 @@ th, td {
 					</div>
 					<div class="col-md-4">
 						<div class="input-group">
-							<form:input type="text" placeholder="Category Name" name="CatName" path="name"
+							<form:input type="text" placeholder="Category Name" name="CatName" required="true" path="name"
 								class="form-control input-lg"></form:input>
 						</div>
 
@@ -66,7 +66,7 @@ th, td {
 					</div>
 					<div class="col-md-4">
 						<div class="input-group">
-							<form:input type="text" placeholder="Category Description" name="CatDesc" path="description" class="form-control input-lg"></form:input>
+							<form:input type="text" placeholder="Category Description" required="true" name="CatDesc" path="description" class="form-control input-lg"></form:input>
 						</div>
 					</div>
 				</div>

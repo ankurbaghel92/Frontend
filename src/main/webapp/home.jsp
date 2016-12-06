@@ -152,6 +152,19 @@
 		<br><br>
 	</c:if>
 
+<!-- If User Submitted Contact Us Details -->
+
+<c:if test="${not empty ContactSubmitted}">
+					<center><br>
+			<h4 style="color: green">${ContactSubmitted}</h4>
+		</center>
+				<jsp:include page="carousel.jsp"></jsp:include>
+		
+			<br><br><br><br>
+		
+	</c:if>
+
+
 <!-- If User Clicked on Register -->
 	<c:if test="${userclickedRegister}">
 	<br><br><br><br>

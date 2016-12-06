@@ -35,7 +35,7 @@ th, td {
 					</div>
 					<div class="col-md-4">
 						<div class="input-group">
-							<form:input type="text" placeholder="Supplier ID" name="SupId" class="form-control input-lg" path="Id"></form:input>
+							<form:input type="text" placeholder="Supplier ID" name="SupId" required="true" class="form-control input-lg" path="Id"></form:input>
 						</div>
 					</div>
 				</div>
@@ -46,7 +46,7 @@ th, td {
 					</div>
 					<div class="col-md-4">
 						<div class="input-group">
-							<form:input type="text" placeholder="Supplier Name" name="SupName" class="form-control input-lg" path="name"></form:input>
+							<form:input type="text" placeholder="Supplier Name" name="SupName" required="true" class="form-control input-lg" path="name"></form:input>
 						</div>
 					</div>
 				</div>
@@ -57,7 +57,7 @@ th, td {
 					</div>
 					<div class="col-md-4">
 						<div class="input-group">
-							<form:input type="text" placeholder="Supplier Address" name="SupAdd" class="form-control input-lg" path="description"></form:input>
+							<form:input type="text" placeholder="Supplier Address" name="SupAdd" required="true" class="form-control input-lg" path="description"></form:input>
 						</div>
 					</div>
 				</div>
