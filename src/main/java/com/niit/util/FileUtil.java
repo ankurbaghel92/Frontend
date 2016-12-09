@@ -4,6 +4,8 @@ import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.multipart.MultipartFile;
@@ -18,7 +20,10 @@ public class FileUtil {
 	{
 		log.debug("FileUtil ---> Starting of the Method DisplayAllCart()");
 
-		if(!file.isEmpty()){
+		HttpServletRequest request;
+		
+/*		Sting upload = request.get
+*/		if(!file.isEmpty()){
 			
 			try{
 				byte[] bytes = file.getBytes();

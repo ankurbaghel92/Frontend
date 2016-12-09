@@ -16,20 +16,23 @@
 <body>
 <%-- <c:set var="imagefolder" value="D:\\DT NIIT\\yamahaonline\\ProductImages\\"></c:set>
  --%>
- <c:set var="imagefolder" value="resources/img/"></c:set>
- 
- 
+ <c:set var="imagefolder" value="Images/ProductImages/"></c:set>
+  
  <div class="container col-md-8">
 			<div class="list col-md-4 ">
-<div class="thumbnail">
-<img src="${imagefolder}${ProductId}.jpg">
-<div class="caption"><h4><strong>${Productname}</strong></h4></div>
-</div>
+<div class="thumbnail" >
+
+ <img src="${imagefolder}${ProductId}.jpg">
+
+ <div class="caption"><h4><strong>${Productname}</strong></h4></div>
+
 </div>
 <c:url var="addtocart" value="/AddToCart?pid=${ProductId}"></c:url>
  <a class="btn btn-success" href="cart_checkout">Checkout</a>
  <a class="btn btn-success" href="${addtocart}">Add To Cart</a>
 </div>
+</div>
+ ${ProductID}
 
 </body>
 </html>

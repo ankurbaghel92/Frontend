@@ -45,9 +45,14 @@ public class ProductController {
 	@Autowired
 	ProductDAO productDAO;
 	
-	private String path="resources/img/";
+/*	private String path="/prodImage/";
+*/
 
+/*	private String path= "D:/DT NIIT/yamahaonline/src/main/webapp/WEB-INF/ProdImage/";
+*/		private String path= "D:/DT NIIT/yamahaonline/src/main/webapp/Images/ProductImages/";
 
+	
+	
 	/*@Autowired
 	HttpServletRequest request;
 	public String path = request.getSession().getServletContext().getRealPath("/");

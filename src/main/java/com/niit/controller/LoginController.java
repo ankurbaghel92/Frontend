@@ -98,7 +98,8 @@ public class LoginController {
 			mv.addObject("IsAdmin", "true");
 			boolean showadmin = true;
 			session.setAttribute("ShowAdminForm", showadmin);
-			mv.addObject("AdminSuccessMessage", "You are Logged in Admin");
+			//mv.addObject("AdminSuccessMessage", "You are Logged in Admin");
+			session.setAttribute("AdminSuccessMessage", "You are Logged in Admin");
 			log.debug("LoginController ---> Ending of the Method checklogin()");
 
 			return mv;
