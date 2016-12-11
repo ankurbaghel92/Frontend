@@ -14,8 +14,9 @@
  --%> 
  ${SuccessMesssage}
  ${ErrorMesssage}
+${logOutMessage}
 
-
+<%-- <!-- In Admin Login, then show Admin Page -->
 	<c:if test="${not empty successmessage}">
 					<center>
 					<br><br><br><br>
@@ -26,7 +27,9 @@
 			<br><br><br><br>
 		
 	</c:if>
-
+ --%>
+ 
+ 
 <!-- If User Login is Successful -->
 <c:if test="${not empty UserLoginSuccessMessage}">
 					<center>
@@ -60,18 +63,7 @@
 				
 			</c:if>
 			
-				<!-- If Log Out Is SuccessFul -->
-			<c:if test="${logout}">
-	<br>
-	<center>
-	<h4 style="color: green">${logOutMessage} ${Username}</h4>
-	<br><br></center>
-		<jsp:include page="carousel.jsp"></jsp:include>
-	<br><br><br><br>
-
-	</c:if>
-	
-	
+			
 		<!-- If Spring Security Fails-->
 			<c:if test="${accessdenied}">
 	<div class="alert alert-danger">
@@ -82,25 +74,7 @@
 
 	</c:if>
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-			
-			
-			
-			
+		
 			
 			
 			<!-- If User Registration is not Successful -->
@@ -126,6 +100,7 @@
 		<jsp:include page="carousel.jsp"></jsp:include>
 	</c:if>
 
+<!-- If Admin Login, Then Show Admin Page -->
 	<c:if test="${not empty ShowAdminForm}">
 	<center><h4 style="color: green">${AdminSuccessMessage}</h4></center>
  		<jsp:include page="AdminHomePage.jsp"></jsp:include>
@@ -133,6 +108,7 @@
 
 	</c:if>
 	
+	<!-- If User Clicked on anyone of the Product -->
 	<c:if test="${ShowSelectedProduct}">
 	<br><br><br>
 		<jsp:include page="WEB-INF/userviews/SelectedProduct.jsp"></jsp:include>
@@ -173,9 +149,10 @@
 
 <!-- If User Clicked on About Us -->
 		<c:if test="${userclickedAbout}">
-	<br><br><br>
 		<jsp:include page="about-us.jsp"></jsp:include>
 	</c:if>
+	
+<!--*******************************************************************************************************************************************************************  -->
 	
 	<!-- CATEGORY FORM ACTIONS -->
 	
@@ -218,24 +195,7 @@
 	<br><br><br><br>
 	</c:if>
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+<!--*******************************************************************************************************************************************************************  -->
 		<!-- SUPPLIER FORM ACTIONS -->
 	
 	<!-- If Admin Clicked on InsertSupplier -->
@@ -280,141 +240,70 @@
  		<jsp:include page="WEB-INF/AdminViews/AllSupplier.jsp"></jsp:include>
 	<br><br><br><br>
 	</c:if>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+<!--*******************************************************************************************************************************************************************  -->
 	<!-- PRODUCT FORM ACTION  -->
 	
-	
-	<!-- If Admin Clicked on InsertProduct -->
-		<c:if test="${userclickedInsertProduct}">
-		<jsp:include page="WEB-INF/AdminViews/InsertProduct.jsp"></jsp:include>
-	</c:if>	
-	
-	
-	
-		<!-- If Insert Supplier is SuccessFul -->
-	<c:if test="${not empty InsertProductSuccess}">
-				<center><h4 style="color: green">${InsertProductSuccess}</h4></center>
-				<jsp:include page="WEB-INF/AdminViews/AllProduct.jsp"></jsp:include>
-			<br><br><br><br>
-	</c:if>
-	
-	
+	<!-- If Admin Clicked on InsertProduct -->	
+							<c:if test="${userclickedInsertProduct}">
+							<jsp:include page="WEB-INF/AdminViews/InsertProduct.jsp"></jsp:include>
+						</c:if>	
+						
+    <!-- If Insert Supplier is SuccessFul -->
+							<c:if test="${not empty InsertProductSuccess}">
+										<center><h4 style="color: green">${InsertProductSuccess}</h4></center>
+										<jsp:include page="WEB-INF/AdminViews/AllProduct.jsp"></jsp:include>
+									<br><br><br><br>
+							</c:if>
+							
 	<!-- Displaying All Product -->
-	<c:if test="${not empty ShowAllProduct}">
-	<center><h4 style="color: green">${ShowAllProduct}</h4></center>
- 		<jsp:include page="WEB-INF/AdminViews/AllProduct.jsp"></jsp:include>
-	<br><br><br><br>
-	</c:if>
-	
+							<c:if test="${not empty ShowAllProduct}">
+							<center><h4 style="color: green">${ShowAllProduct}</h4></center>
+						 		<jsp:include page="WEB-INF/AdminViews/AllProduct.jsp"></jsp:include>
+							<br><br><br><br>
+							</c:if>
+							
 	
 	<!-- If Admin Clicked on ModifyProduct -->
-		<c:if test="${not empty AdminClickedModifyProduct}">
- 		<jsp:include page="WEB-INF/AdminViews/ModifyProduct.jsp"></jsp:include>
-	<br><br><br><br>
-	</c:if> 
+							<c:if test="${not empty AdminClickedModifyProduct}">
+					 		<jsp:include page="WEB-INF/AdminViews/ModifyProduct.jsp"></jsp:include>
+						<br><br><br><br>
+						</c:if> 
 	
 	
 	<!-- If Modify Product is SuccessFul -->
-
-<c:if test="${not empty ModifyProductSuccess}">
-				<center><h4 style="color: green">${ModifyProductSuccess}</h4></center>
-				 		<jsp:include page="WEB-INF/AdminViews/AllProduct.jsp"></jsp:include>
-							<br><br><br><br>
-	</c:if>
-	
+							<c:if test="${not empty ModifyProductSuccess}">
+							<center><h4 style="color: green">${ModifyProductSuccess}</h4></center>
+							 		<jsp:include page="WEB-INF/AdminViews/AllProduct.jsp"></jsp:include>
+										<br><br><br><br>
+							</c:if>
+					
 	
 	<!-- If Delete Product is SuccessFul -->
-		<c:if test="${not empty DeleteProductSuccess}">
-				<center><h4 style="color: green">${DeleteProductSuccess}</h4></center>
-				 		<jsp:include page="WEB-INF/AdminViews/AllProduct.jsp"></jsp:include>
-							<br><br><br><br>
-	</c:if>
+							<c:if test="${not empty DeleteProductSuccess}">
+									<center><h4 style="color: green">${DeleteProductSuccess}</h4></center>
+									 		<jsp:include page="WEB-INF/AdminViews/AllProduct.jsp"></jsp:include>
+												<br><br><br><br>
+						</c:if>
 	
-	
-	
-	<%-- <c:if test="${ShowCODPage}">
-	<br><br><br>
-	<jsp:include page="WEB-INF/userviews/PaymentMethod.jsp"></jsp:include><br><br><br><br>
-	<br><br><br><br>
-		<jsp:include page="WEB-INF/userviews/cod.jsp"></jsp:include>
-	<br><br><br><br>
-
-	</c:if>
-	
-	<c:if test="${ShowDCPage}">
-	<br><br><br>
-	<jsp:include page="WEB-INF/userviews/PaymentMethod.jsp"></jsp:include><br><br><br><br>
-		<jsp:include page="WEB-INF/userviews/credit_debit.jsp"></jsp:include>
-	<br><br><br><br>
-
-	</c:if>
-	
-	<c:if test="${ShowpaypalPage}">
-	<br><br><br>
-	<jsp:include page="WEB-INF/userviews/PaymentMethod.jsp"></jsp:include><br><br><br><br>
-		<jsp:include page="WEB-INF/userviews/paypal.jsp"></jsp:include>
-	<br><br><br><br>
-
-	</c:if>
-	
- --%>	
-	
-	
-	
-	
-	
-	
-	
-	
+<!--*******************************************************************************************************************************************************************  -->
+<!-- Cart Action -->	
+		
 	<!-- Displaying All Cart -->
-	<c:if test="${not empty ShowingAllCart}">
-	<center><h4 style="color: green">${CartAddedSuccessMessage}</h4></center>
- 		<jsp:include page="WEB-INF/userviews/AllCarts.jsp"></jsp:include>
-	<br><br><br><br>
-	</c:if>
-	
-	
-	
-	
+						<c:if test="${not empty ShowingAllCart}">
+						<center><h4 style="color: green">${CartAddedSuccessMessage}</h4></center>
+					 		<jsp:include page="WEB-INF/userviews/AllCarts.jsp"></jsp:include>
+						<br><br><br><br>
+						</c:if>
+							
 		<!-- If Add to CArt is Successful -->
-		<c:if test="${not empty CartAddedSuccessMessage}">
-	<center><h4 style="color: green">${CartAddedSuccessMessage}</h4></center>
-		<center><h4 style="color: green">${CartDeletedSuccessMessage}</h4></center>
- 		<jsp:include page="WEB-INF/userviews/AllCarts.jsp"></jsp:include>
-	<br><br><br><br>
-	</c:if>
-	
-	
-	
-	
-	
-	
-	
-	<%-- <c:if test="${userclickedDemo}">
-	<br><br><br>
-		<jsp:include page="WEB-INF/userviews/PaymentMethod.jsp"></jsp:include>
-	<br><br><br><br>
+						<c:if test="${not empty CartAddedSuccessMessage}">
+					<center><h4 style="color: green">${CartAddedSuccessMessage}</h4></center>
+						<center><h4 style="color: green">${CartDeletedSuccessMessage}</h4></center>
+				 		<jsp:include page="WEB-INF/userviews/AllCarts.jsp"></jsp:include>
+					<br><br><br><br>
+					</c:if>
+		
 
-	</c:if>
- --%>
-	
-
-<c:if test="${userclickedFZ}">
-	<br><br><br>
-		<jsp:include page="FZ.jsp"></jsp:include>
-	<br><br><br><br>
-
-	</c:if>
 <%-- 
 	<c:if test="${not empty AdminSuccessMessage}">
 	<center><h4 style="color: green">${AdminSuccessMessage}</h4></center>

@@ -9,6 +9,12 @@ import javax.validation.Valid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContext;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -56,6 +62,7 @@ public class LoginController {
 		log.debug("LoginController ---> Starting of the Method showLoginForm()");
 	    model.addAttribute("login", new Login()); 
 	    session.setAttribute("user", new Login());
+	    
 		model.addAttribute("userclickedlogin","true");
 		log.debug("LoginController ---> Ending of the Method showLoginForm()");
 	    return "home"; 
@@ -87,6 +94,15 @@ public class LoginController {
 		String email = user.getEmail();
 		session.setAttribute("email", email);
 		session.setAttribute("Username", username);
+		
+		Authentication authentication =  new UsernamePasswordAuthenticationToken(name, pass);
+		SecurityContext securitycontext = SecurityContextHolder.getContext();
+		securitycontext.setAuthentication(authentication);
+		 session = request.getSession(true);
+		session.setAttribute("SPRING_SECURITY_CONTEXT", securitycontext);
+		
+		
+		
 		mv.addObject("ShowCarousel", "True");
 	session.setAttribute("UserLoginSuccessMessage", "Welcome");
 	log.debug("LoginController ---> Ending of the Method checklogin()");
@@ -98,6 +114,14 @@ public class LoginController {
 			mv.addObject("IsAdmin", "true");
 			boolean showadmin = true;
 			session.setAttribute("ShowAdminForm", showadmin);
+			
+			Authentication authentication =  new UsernamePasswordAuthenticationToken(name, pass);
+			SecurityContext securitycontext = SecurityContextHolder.getContext();
+			securitycontext.setAuthentication(authentication);
+			 session = request.getSession(true);
+			session.setAttribute("SPRING_SECURITY_CONTEXT", securitycontext);
+			
+			
 			//mv.addObject("AdminSuccessMessage", "You are Logged in Admin");
 			session.setAttribute("AdminSuccessMessage", "You are Logged in Admin");
 			log.debug("LoginController ---> Ending of the Method checklogin()");
@@ -131,8 +155,8 @@ public class LoginController {
 	}
 	
 	
-	@RequestMapping(value="/logout")
-	public ModelAndView logout(HttpSession session,HttpServletRequest request)
+	@RequestMapping(value="/logout",method=RequestMethod.GET)
+	public ModelAndView logout(HttpSession session,HttpServletRequest request, HttpServletResponse response)
 	{
 		log.debug("LoginController ---> Starting of the Method logout()");
 ModelAndView mv = new ModelAndView("home");
@@ -144,7 +168,14 @@ ModelAndView mv = new ModelAndView("home");
 		session.setAttribute("categorylist", categoryDAO.list());
 		mv.addObject("logOutMessage", "You are Successfully Logged Out");
 		mv.addObject("logout", "true");
+		
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		if(auth!=null)
+		{
+			new SecurityContextLogoutHandler().logout(request, response, auth);
+		}
 		log.debug("LoginController ---> Ending of the Method logout()");
+
 	return mv;
 	}
 	

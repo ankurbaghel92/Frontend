@@ -19,6 +19,7 @@
 	<security:intercept-url pattern="/Insert**" access="hasRole('ROLE_ADMIN')"/>
 	<security:intercept-url pattern="/Display**" access="hasRole('ROLE_ADMIN')"/>
 	<security:intercept-url pattern="/Modify**" access="hasRole('ROLE_ADMIN')"/>
+	<security:logout logout-url="/logout" logout-success-url="/home"/>
 <security:form-login username-parameter="username" password-parameter="password" authentication-failure-forward-url="/accessdenied"/>
 	
 	<security:csrf disabled="true"/>

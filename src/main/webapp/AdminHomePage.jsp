@@ -42,7 +42,6 @@ border-bottom:1px dotted gray;
 <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">Manage Category</a>
 <ul class="dropdown-menu" role="menu">
 <li><a href="InsertCategory">Insert Category</a>
-<li><a href="SearchCategory">Search Category</a>
 <li><a href="DisplayAllCategory">All Category</a>
 </ul>
 </li>
@@ -50,7 +49,8 @@ border-bottom:1px dotted gray;
 <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">Manage Product</a>
 <ul class="dropdown-menu" role="menu">
 <li><a href="InsertProduct">Insert Product</a>
-<li><a href="SeearchProduct">Search Product</a>
+<li><a href="SeearchProduct">Products ByCategory</a>
+<li><a href="SeearchProduct">Products BySupplier</a>
 <li><a href="DisplayAllProduct">All Product</a>
 </ul>
 </li>
@@ -59,7 +59,7 @@ border-bottom:1px dotted gray;
 <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">Manage Supplier</a>
 <ul class="dropdown-menu" role="menu">
 <li><a href="InsertSupplier">Insert Supplier</a>
-<li><a href="SearchSupplier">Search Supplier</a>
+
 <li><a href="DisplayAllSupplier">All Supplier</a>
 </ul>
 </li>
