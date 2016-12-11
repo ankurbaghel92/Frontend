@@ -10,6 +10,9 @@
 <body>
 	<jsp:include page="navbar.jsp"></jsp:include><br><br><br>
 <jsp:include page="Category.jsp"></jsp:include>
+<%-- <jsp:include page="video.jsp"></jsp:include>
+ --%>
+
 <%-- 			<jsp:include page="carousel.jsp"></jsp:include>
  --%> 
  ${SuccessMesssage}
@@ -283,7 +286,33 @@ ${logOutMessage}
 									<center><h4 style="color: green">${DeleteProductSuccess}</h4></center>
 									 		<jsp:include page="WEB-INF/AdminViews/AllProduct.jsp"></jsp:include>
 												<br><br><br><br>
+												
+												
+												
+						</c:if><c:if test="${not empty ShowProductByCategory}">
+									 		<jsp:include page="WEB-INF/AdminViews/ProductByCategory.jsp"></jsp:include>
+												<br><br><br><br>
 						</c:if>
+						
+							<c:if test="${not empty ShowProductBySupplier}">
+									 		<jsp:include page="WEB-INF/AdminViews/ProductBySupplier.jsp"></jsp:include>
+												<br><br><br><br>
+						</c:if>
+	
+	
+					
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 <!--*******************************************************************************************************************************************************************  -->
 <!-- Cart Action -->	

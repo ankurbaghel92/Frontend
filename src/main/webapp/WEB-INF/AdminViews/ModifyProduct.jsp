@@ -169,8 +169,8 @@ select{ width:240px;height:40px
 		<td>${product.category_Id}</td>
 		<td>${product.supplier_Id}</td>
 		<td>${product.stock}</td>
-		<td><a href="${modifyproduct}">Modify</a></td>
-		<td><a href="${deleteproduct}">Delete</a></td>
+		<td><a href="${modifyproduct}" onclick="myFunction()">Modify</a></td>
+		<td><a href="${deleteproduct}" onclick="myFunction()">Delete</a></td>
 		</tr>
 		</c:forEach> 		
 		</table>

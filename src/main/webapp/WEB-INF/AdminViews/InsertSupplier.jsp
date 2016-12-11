@@ -22,6 +22,12 @@ th, td {
 }
 </style>
 
+<script>
+function myFunction() {
+    alert("Are You Sure Want to Proceed?");
+}
+</script>
+
 <body>
 		<div class="col-md-8">
 			<form:form action="InsertSupplierform" class="well form-horizontal" modelAttribute="supplier" method="post">
@@ -90,8 +96,8 @@ th, td {
 		<td>${supplier.id}</td>
 		<td>${supplier.name}</td>
 		<td>${supplier.description}</td>
-		<td><a href="${modifysupplier}">Modify</a></td>
-		<td><a href="${deletesupplier}">Delete</a></td>
+		<td><a href="${modifysupplier}" onclick="myFunction()">Modify</a></td>
+		<td><a href="${deletesupplier}" onclick="myFunction()">Delete</a></td>
 		</tr>
 		</c:forEach> 		
 		</table>

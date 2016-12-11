@@ -12,10 +12,20 @@
 
 <head>
 
+<style>
+button2{
+    padding-top: 50px;
+    padding-right: 30px;
+    padding-bottom: 50px;
+    padding-left: 80px;
+
+}
+
+</style>
+
 </head>
 <body>
-<%-- <c:set var="imagefolder" value="D:\\DT NIIT\\yamahaonline\\ProductImages\\"></c:set>
- --%>
+
  <c:set var="imagefolder" value="Images/ProductImages/"></c:set>
   
  <div class="container col-md-8">
@@ -24,15 +34,19 @@
 
  <img src="${imagefolder}${ProductId}.jpg">
 
- <div class="caption"><h4><strong>${Productname}</strong></h4></div>
+ <div class="caption">
+ <h4 style="color:#6082F5"><strong>${Productname}</strong></h4>
+ <h4 style="color:#6082F5"><strong>Rs:-${ProductPrice}</strong></h4>
+ </div>
 
 </div>
+<div class="button2">
 <c:url var="addtocart" value="/AddToCart?pid=${ProductId}"></c:url>
  <a class="btn btn-success" href="cart_checkout">Checkout</a>
  <a class="btn btn-success" href="${addtocart}">Add To Cart</a>
 </div>
 </div>
- ${ProductID}
+</div>
 
 </body>
 </html>

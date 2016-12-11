@@ -102,8 +102,8 @@ th, td {
 <%-- 		//<c:set var="cat" value="${supplier.id}"></c:set>
  --%>		<td>${supplier.name}</td>
 		<td>${supplier.description}</td>
-		<td><a href="${modifysupplier}">Modify</a></td>
-		<td><a href="${deletesupplier}">Delete</a></td>
+		<td><a href="${modifysupplier}" onclick="myFunction()">Modify</a></td>
+		<td><a href="${deletesupplier}" onclick="myFunction()">Delete</a></td>
 		</tr>
 		</c:forEach> 		
 		</table>

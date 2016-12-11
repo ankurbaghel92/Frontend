@@ -23,42 +23,41 @@ th, td {
 }
 </style>
 
-<script>
-function myFunction() {
-    alert("Are You Sure Want to Proceed?");
-}
-</script>
+
 
 <body>
 
 	<div class="container col-md-8">
-	<form:form action="" modelAttribute="product">
-		<h3>Product List</h3>
+	<form:form action="" modelAttribute="category">
+		<h3>Category List</h3>
 		<h1 style="background-color: #c4e17f; border-radius: 5px; height: 5px"></h1>
 		<table style="width: 100%;border-spacing:25px">
 		<tr style="height: 50px;color: green">
+		<th><h4><strong>Category Id</strong></h4></th>
+		<th><h4><strong>Category Name</strong></h4></th>
 		<th><h4><strong>Product Id</strong></h4></th>
 		<th><h4><strong>Product Name</strong></h4></th>
-		<th><h4><strong>Product Price</strong></h4></th>
-		<th><h4><strong>Category_ID</strong></h4></th>
-		<th><h4><strong>Supplier_Id</strong></h4></th>
-		<th><h4><strong>Stock</strong></h4></th>
+		<th><h4><strong>Product Id</strong></h4></th>
+		<th><h4><strong>Product Name</strong></h4></th>
+		<th><h4><strong>Product Id</strong></h4></th>
+		<th><h4><strong>Product Name</strong></h4></th>
+		
 		</tr>
-		 <c:forEach items="${productlist}" var="product">
-		 <c:url var="modifyproduct" value="/ModifyProduct?pid=${product.id}"></c:url>
-		  <c:url var="deleteproduct" value="/DeleteProduct?pid=${product.id}"></c:url>
+		 <c:forEach items="${categorylist}" var="category">
+		 <c:url var="modifycategory" value="/ModifyCategory?cid=${category.id}"></c:url>
+		  <c:url var="deletecategory" value="/DeleteCategory?cid=${category.id}"></c:url>
  	<tr style="height: 30px">
+		<td>${category.id}</td>
+		<td>${category.name}</td>
+		 			<c:forEach items="${category.products}" var="product">
+		
 		<td>${product.id}</td>
 		<td>${product.name}</td>
-		<td>${product.price}</td>
-		<td>${product.category_Id}</td>
-		<td>${product.supplier_Id}</td>
-		<td>${product.stock}</td>
-		<td><a href="${modifyproduct}" onclick="myFunction()">Modify</a></td>
-		<td><a href="${deleteproduct}" onclick="myFunction()">Delete</a></td>
-		</tr>
-		</c:forEach> 		
-		</table>
+										
+		</c:forEach>
+				</tr>
+				</c:forEach>
+						</table>
 		</form:form>
 	</div>
 </body>

@@ -26,6 +26,12 @@ th, td {
 select{ width:240px;height:40px
 }
 </style>
+
+<script>
+function myFunction() {
+    alert("Are You Sure Want to Proceed?");
+}
+</script>
 <body>
 		<div class="col-md-8">
 			<form:form action="ProcessInsertProductform" class="well form-horizontal" method="post" modelAttribute="product" enctype="multipart/form-data">
@@ -156,8 +162,8 @@ select{ width:240px;height:40px
 		<td>${product.category_Id}</td>
 		<td>${product.supplier_Id}</td>
 		<td>${product.stock}</td>
-		<td><a href="${modifyproduct}">Modify</a></td>
-		<td><a href="${deleteproduct}">Delete</a></td>
+		<td><a href="${modifyproduct}" onclick="myFunction()">Modify</a></td>
+		<td><a href="${deleteproduct}" onclick="myFunction()">Delete</a></td>
 		</tr>
 		</c:forEach> 		
 		</table>

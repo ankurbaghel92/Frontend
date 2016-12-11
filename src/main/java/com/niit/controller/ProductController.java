@@ -44,19 +44,9 @@ public class ProductController {
 	
 	@Autowired
 	ProductDAO productDAO;
-	
-/*	private String path="/prodImage/";
-*/
 
-/*	private String path= "D:/DT NIIT/yamahaonline/src/main/webapp/WEB-INF/ProdImage/";
-*/		private String path= "D:/DT NIIT/yamahaonline/src/main/webapp/Images/ProductImages/";
+		private String path= "D:/DT NIIT/yamahaonline/src/main/webapp/Images/ProductImages/";
 
-	
-	
-	/*@Autowired
-	HttpServletRequest request;
-	public String path = request.getSession().getServletContext().getRealPath("/");
-	*/
 	
 	@RequestMapping("/UserSelectedProduct")
 	public ModelAndView SelectedProduct(@RequestParam("pid")String ProductId)
@@ -70,26 +60,13 @@ public class ProductController {
 			mv.addObject("Productname", product.getName());
 			mv.addObject("product", product);
 			mv.addObject("productlist", productDAO.list());
-		    System.out.println(product.getName());	
 		    mv.addObject("ShowSelectedProduct", "true");
+		    mv.addObject("ProductPrice", product.getPrice());
 		    
 		    log.debug("ProductController --->Ending of the Method SelectedProduct()");
 				return mv;
 		}
-	
-
-/*	
-	@RequestMapping("UserSelectedProduct/{product.id}")
-	public String SelectedProduct(@PathVariable String productid)throws IOException
-	{
-		return "FZ";
-	}
-	
-	*/
-	
-	
-	
-	
+		
 	
 	@RequestMapping(value="/InsertProduct",method=RequestMethod.GET)
 	public ModelAndView ShowInsertProduct()
@@ -211,8 +188,27 @@ public class ProductController {
 	}
 	
 	
+	@RequestMapping(value="/SearchProductBySupplier")
+	public ModelAndView displayProductBySupplier(){
+		ModelAndView mv = new ModelAndView("home");
+		mv.addObject("product", product);
+		mv.addObject("supplier", supplier);
+		mv.addObject("productlist", productDAO.list());
+		mv.addObject("supplierlist", supplierDAO.list());
+		mv.addObject("ShowProductBySupplier", true);
+		return mv;
+	}
 	
-	
+	@RequestMapping(value="/SearchProductByCategory")
+	public ModelAndView displayProductByCategory(){
+		ModelAndView mv = new ModelAndView("home");
+		mv.addObject("product", product);
+		mv.addObject("category", category);
+		mv.addObject("productlist", productDAO.list());
+		mv.addObject("categorylist", categoryDAO.list());
+		mv.addObject("ShowProductByCategory", true);
+		return mv;
+	}
 	
 	
 	

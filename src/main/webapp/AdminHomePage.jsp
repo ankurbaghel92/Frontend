@@ -49,8 +49,8 @@ border-bottom:1px dotted gray;
 <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">Manage Product</a>
 <ul class="dropdown-menu" role="menu">
 <li><a href="InsertProduct">Insert Product</a>
-<li><a href="SeearchProduct">Products ByCategory</a>
-<li><a href="SeearchProduct">Products BySupplier</a>
+<li><a href="SearchProductByCategory">Products ByCategory</a>
+<li><a href="SearchProductBySupplier">Products BySupplier</a>
 <li><a href="DisplayAllProduct">All Product</a>
 </ul>
 </li>

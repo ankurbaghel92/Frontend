@@ -23,6 +23,12 @@ th, td {
     padding: 5px;
 }
 </style>
+
+<script>
+function myFunction() {
+    alert("Are You Sure Want to Proceed?");
+}
+</script>
 <body>
 		<div class="col-md-8">
 			<form:form action="InsertCategoryform" class="well form-horizontal"
@@ -100,8 +106,8 @@ th, td {
 		<c:set var="cat" value="${category.id}"></c:set>
 		<td>${category.name}</td>
 		<td>${category.description}</td>
-		<td><a href="${modifycategory}">Modify</a></td>
-		<td><a href="${deletecategory}">Delete</a></td>
+		<td><a href="${modifycategory}" onclick="myFunction()">Modify</a></td>
+		<td><a href="${deletecategory}" onclick="myFunction()">Delete</a></td>
 		</tr>
 		</c:forEach> 		
 		</table>

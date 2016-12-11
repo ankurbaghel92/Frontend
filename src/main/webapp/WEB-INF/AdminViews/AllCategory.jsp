@@ -23,6 +23,11 @@ th, td {
 }
 </style>
 
+<script>
+function myFunction() {
+    alert("Are You Sure Want to Proceed?");
+}
+</script>
 
 
 <body>
@@ -44,8 +49,8 @@ th, td {
 		<td>${category.id}</td>
 		<td>${category.name}</td>
 		<td>${category.description}</td>
-		<td><a href="${modifycategory}">Modify</a></td>
-		<td><a href="${deletecategory}">Delete</a></td>
+		<td><a href="${modifycategory}" onclick="myFunction()">Modify</a></td>
+		<td><a href="${deletecategory}" onclick="myFunction()">Delete</a></td>
 		</tr>
 		</c:forEach> 		
 		</table>
