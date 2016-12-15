@@ -86,11 +86,8 @@ border-bottom:1px dotted gray;
 <li><h4><a><strong>Upcoming Bikes</strong></a></h4></li>
  -->
 
-
-</form>
-<div class="viv">
- <iframe class="video" src="https://www.youtube.com/watch?v=53FPC7tqbNI" allowfullscreen=""></iframe>
-</div>
-</div>
+</form> 
+<iframe width="420" height="400" src="https://www.youtube.com/embed/naErIqGjDQI" frameborder="0" allowfullscreen></iframe> 
+ </div>
 </body>
 </html>
